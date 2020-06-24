@@ -1,26 +1,67 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { WithStyles, withStyles, Paper, useMediaQuery, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { styles } from 'styles';
+import classNames from 'classnames';
+import { Navbar } from 'components/navbar/Navbar';
+import Particles from 'react-particles-js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+interface Props {}
+
+type AllProps 
+  = WithStyles<typeof styles>
+  & Props;
+
+const AppComp: React.FC<AllProps> = (props) => {
+  const { classes } = props;
+
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? 'dark' : 'light',
+          // type: 'light'
+        },
+      }),
+    // eslint-disable-next-line
+    [prefersDarkMode],
   );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div className={classes.wrapper}>
+        <Paper square className={classNames(classes.bgLinesRaw, classes.bgLines)}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </Paper>
+        <Navbar />
+        <Particles 
+          params={{
+            "particles": {
+                "number": {
+                    "value": 50
+                },
+                "size": {
+                    "value": 3
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    }
+                }
+            }
+          }}
+        />
+      </div>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export const App = withStyles(styles)(AppComp);
