@@ -3,7 +3,9 @@ import { WithStyles, withStyles, Paper, useMediaQuery, createMuiTheme, ThemeProv
 import { styles } from 'styles';
 import classNames from 'classnames';
 import { Navbar } from 'components/navbar/Navbar';
-import Particles from 'react-particles-js';
+import { Home } from 'components/main/home/Home';
+import { Route } from 'react-router-dom';
+import { Contact } from 'components/main/contact/Contact';
 
 interface Props {}
 
@@ -39,26 +41,10 @@ const AppComp: React.FC<AllProps> = (props) => {
           <span></span>
         </Paper>
         <Navbar />
-        <Particles 
-          params={{
-            "particles": {
-                "number": {
-                    "value": 50
-                },
-                "size": {
-                    "value": 3
-                }
-            },
-            "interactivity": {
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    }
-                }
-            }
-          }}
-        />
+        <div className={classes.main}>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
+        </div>
       </div>
     </ThemeProvider>
   )

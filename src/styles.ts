@@ -17,10 +17,11 @@ export const styles = (theme: Theme) => createStyles({
       lineHeight: '1.8rem',
       fontWeight: 400,
       fontFamily: `'Baloo Chettan 2', cursive`,
-      color: '#a4acc4',
+      color: `${fontColor}`,
     },
     'a': {
-      textDecoration: 'none'
+      textDecoration: 'none',
+      backgroundColor: 'transparent'
     }
   },
   wrapper: {
@@ -36,6 +37,7 @@ export const styles = (theme: Theme) => createStyles({
     position: 'absolute',
   },
   bgLines: {
+    background: '#10121b',
     left: '300px',
     width: 'calc(100% - 300px)',
     zIndex: -1,
@@ -180,5 +182,86 @@ export const styles = (theme: Theme) => createStyles({
         color: '#037fff'
       }
     }
+  },
+  main: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    position: 'relative',
+    zIndex: 1
+  },
+  particle: {
+    position: 'absolute',
+    left: '300px',
+    top: 0,
+    height: '100%',
+    zIndex: -1,
+    background: '#10121b'
+  },
+  container: {
+    width: '100%',
+    padding: '0 15px',
+    margin: '0 auto',
+    '@media (min-width: 576px)': {
+      maxWidth: '540px'
+    },
+    '@media (min-width: 768px)': {
+      maxWidth: '720px'
+    },
+    '@media (min-width: 992px)': {
+      maxWidth: '960px'
+    },
+    '@media (min-width: 1200px)': {
+      maxWidth: '1140px'
+    },
+  },
+  container2: {
+    justifyContent: 'center',
+  },
+  homeContent: {
+    textAlign: 'center',
+    padding: '50px 80px',
+    '& h1': {
+      fontWeight: 700
+    },
+    '& .color-theme': {
+      color: '#037fff'
+    },
+    '& p': {
+      marginTop: '15px',
+      fontSize: '1.25rem',
+      lineHeight: '2rem'
+    }
+  },
+  homeSocial: {
+    paddingLeft: 0,
+    marginBottom: 0,
+    marginTop: '20px',
+    '& li': {
+      listStyle: 'none',
+      display: 'inline-block',
+      margin: '0 8px',
+      '-webkit-transition': 'all .4s ease-out',
+      transition: 'all .4s ease-out',
+      '& a': {
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        color: `${fontColor}`,
+        '&:hover': {
+          color: '#037fff',
+        }
+      },
+      '&:hover': {
+        transform: 'scale(1.1)'
+      }
+    }
+  },
+  section: {
+
+  },
+  contactArea: {
+    position: 'relative',
+    padding: '120px 0'
   }
 })
