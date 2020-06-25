@@ -2,28 +2,29 @@ import { Theme, createStyles } from "@material-ui/core";
 
 const borderColor = '#2e344e';
 const fontColor = '#a4acc4';
+const blueColor = '#037fff';
 
 export const styles = (theme: Theme) => createStyles({
   toolbar: theme.mixins.toolbar,
-  '@global': {
-    '*': {
-      boxSizing: 'border-box',
-      margin: 0,
-      padding: 0
-    },
-    'body': {
-      '-webkit-font-smoothing': 'antialiased',
-      fontSize: '18px',
-      lineHeight: '1.8rem',
-      fontWeight: 400,
-      fontFamily: `'Baloo Chettan 2', cursive`,
-      color: `${fontColor}`,
-    },
-    'a': {
-      textDecoration: 'none',
-      backgroundColor: 'transparent'
-    }
-  },
+  // '@global': {
+  //   '*': {
+  //     boxSizing: 'border-box',
+  //     margin: 0,
+  //     padding: 0
+  //   },
+  //   'body': {
+  //     '-webkit-font-smoothing': 'antialiased',
+  //     fontSize: '18px',
+  //     lineHeight: '1.8rem',
+  //     fontWeight: 400,
+  //     fontFamily: `'Baloo Chettan 2', cursive`,
+  //     color: `${fontColor}`,
+  //   },
+  //   'a': {
+  //     textDecoration: 'none',
+  //     backgroundColor: 'transparent'
+  //   }
+  // },
   wrapper: {
     paddingLeft: '300px',
     position: 'relative',
@@ -133,7 +134,7 @@ export const styles = (theme: Theme) => createStyles({
         overflow: 'hidden',
         zIndex: 1,
         '&:hover': {
-          color: '#037fff',
+          color: `${blueColor}`,
           '&:before': {
             width: '100%',
             visibility: 'visible'
@@ -142,7 +143,7 @@ export const styles = (theme: Theme) => createStyles({
         '&.active': {
           color: '#fff',
           '&:before': {
-            background: '#037fff',
+            background: `${blueColor}`,
             width: '100%',
             visibility: 'visible'
           }
@@ -179,11 +180,11 @@ export const styles = (theme: Theme) => createStyles({
       '-webkit-transition': 'all .4s ease-out',
       transition: 'all .4s ease-out',
       '&:hover': {
-        color: '#037fff'
+        color: `${blueColor}`
       }
     }
   },
-  main: {
+  homeArea: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -226,7 +227,7 @@ export const styles = (theme: Theme) => createStyles({
       fontWeight: 700
     },
     '& .color-theme': {
-      color: '#037fff'
+      color: `${blueColor}`
     },
     '& p': {
       marginTop: '15px',
@@ -249,7 +250,7 @@ export const styles = (theme: Theme) => createStyles({
         transition: 'all .4s ease-out',
         color: `${fontColor}`,
         '&:hover': {
-          color: '#037fff',
+          color: `${blueColor}`,
         }
       },
       '&:hover': {
@@ -263,5 +264,168 @@ export const styles = (theme: Theme) => createStyles({
   contactArea: {
     position: 'relative',
     padding: '120px 0'
-  }
+  },
+  title: {
+    marginBottom: '60px',
+    position: 'relative',
+    zIndex: 1,
+    '& h2': {
+      fontWeight: 700,
+      position: 'relative',
+      paddingBottom: '15px',
+      textTransform: 'uppercase',
+      '&:before, &:after': {
+        content: `''`,
+        position: 'absolute',
+        left: 0,
+        top: 'auto',
+        bottom: 0,
+        height: '5px',
+        borderRadius: '100px'
+      },
+      '&:before': {
+        width: '100px',
+        background: 'rgba(3,127,255,.3)'
+      },
+      '&:after': {
+        width: '35px',
+        background: `${blueColor}`
+      }
+    },
+    '& span': {
+      position: 'absolute',
+      left: 0,
+      top: '100%',
+      fontSize: '6rem',
+      lineHeight: 1,
+      fontWeight: 700,
+      color: 'rgba(25, 29, 43, .44)',
+      display: 'inline-block',
+      textTransform: 'uppercase',
+      zIndex: -1,
+      '-webkit-transform': 'translateY(-40%)',
+      transform: 'translateY(-40%)',
+      '-webkit-user-select': 'none',
+      userSelect: 'none',
+      whiteSpace: 'nowrap'
+    }
+  },
+  formField: {
+    marginTop: '30px',
+    position: 'relative',
+    '& label': {
+      position: 'absolute',
+      left: '15px',
+      top: '-13px',
+      background: '#10121b',
+      '-webkit-transition': 'all .4s ease-out',
+      transition: 'all .4s ease-out',
+      pointerEvents: 'none',
+      padding: '0 10px',
+      fontSize: '.94rem'
+    },
+    '& input, & textarea': {
+      border: '1px solid #2e344e',
+      fontSize: '1rem'
+    }
+  },
+  'button, button:before': {
+    transition: 'all .4s ease-out',
+    '-webkit-transition': 'all .4s ease-out',
+  },
+  button: {
+    position: 'relative',
+    padding: '0 30px',
+    background: `${blueColor}`,
+    color: '#fff',
+    border: 0,
+    display: 'inline-block',
+    zIndex: 1,
+    textTransform: 'uppercase',
+    fontSize: '.9rem',
+    letterSpacing: '2px',
+    height: '50px',
+    lineHeight: '50px',
+    transition: 'all .4s ease-out',
+    '-webkit-transition': 'all .4s ease-out',
+    cursor: 'pointer',
+    '&:hover': {
+      color: '#fff',
+      '&:before': {
+        transform: 'scaleX(1)',
+        '-webkit-transform': 'scaleX(1)',
+      }
+    },
+    '&:before': {
+      transition: 'all .4s ease-out',
+      '-webkit-transition': 'all .4s ease-out',
+      content: `''`,
+      position: 'absolute',
+      left: 0,
+      top: 'auto',
+      bottom: 0,
+      height: '2px',
+      width: '100%',
+      background: '#fff',
+      zIndex: -1,
+      '-webkit-transform': 'scaleX(0)',
+      transform: 'scaleX(0)',
+      '-webkit-transform-origin': '0 0',
+      transformOrigin: '0 0'
+    }
+  },
+  contactInfo: {
+    // marginTop: '-30px'
+    marginTop: '68px'
+  },
+  contactCard: {
+    marginTop: '30px',
+    background: '#191d2b',
+    padding: '30px',
+    display: 'flex',
+    '&:hover span svg': {
+      transition: 'all .4s ease-out',
+      '-webkit-transition': 'all .4s ease-out',
+      transform: 'scale(1.3)',
+      color: '#037fff'
+    }
+  },
+  contactIcon: {
+    display: 'inline-block',
+    height: '60px',
+    width: '60px',
+    flex: '0 0 60px',
+    maxWidth: '60px',
+    border: '1px solid #2e344e',
+    textAlign: 'center',
+    lineHeight: '76px',
+    marginRight: '20px',
+    '& svg': {
+      transition: 'all .4s ease-out',
+      '-webkit-transition': 'all .4s ease-out',
+      transform: 'scale(1)',
+      height: '30px',
+      width: '30px'
+    }
+  },
+  contactContent: {
+    '& h6': {
+      marginTop: '-5px'
+    },
+    '& p': {
+      marginBottom: 0,
+      '& a': {
+        color: '#a4acc4',
+        transition: 'all .4s ease-out',
+        '-webkit-transition': 'all .4s ease-out',
+        '&:hover': {
+          color: '#037fff'
+        }
+      }
+    }
+  },
+  cobaPaper: {
+    width: '100%',
+    height: '500px'
+  },
 })

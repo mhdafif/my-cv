@@ -16,7 +16,7 @@ const HomeComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
 
   return (
-    <div>
+    <div className={classes.homeArea}>
       <Particles
         style={{
           position: 'absolute',

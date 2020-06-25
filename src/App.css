@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.8rem;
+  font-weight: 400;
+  font-family: 'Baloo Chettan 2', cursive;
+  color: #a4acc4;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+h2 {
+  font-size: 2.57rem;
+  line-height: 3.2857rem;
+}
+
+h4 {
+  font-size: 1.71rem;
+  line-height: 2.43rem;
+}
+
+h6 {
+  font-size: 1.14rem;
+  line-height: 1.857rem;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+button, input, select {
+  height: 50px;
+  padding: 0 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+button, input, select, textarea {
+  background: transparent;
+  border: 1px solid #2e344e;
+  font-family: 'Baloo Chettan 2', cursive;
+  color: #a4acc4;
+}
+
+button, input {
+  overflow: visible;
+}
+
+textarea {
+  padding: 10px 15px;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #a4acc4;
+  font-family: 'Baloo Chettan 2', cursive;
+  transition: background-color 5000s ease-in-out 0s;
+}

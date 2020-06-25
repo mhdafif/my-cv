@@ -6,6 +6,7 @@ import { Navbar } from 'components/navbar/Navbar';
 import { Home } from 'components/main/home/Home';
 import { Route } from 'react-router-dom';
 import { Contact } from 'components/main/contact/Contact';
+import './App.css';
 
 interface Props {}
 
@@ -41,10 +42,8 @@ const AppComp: React.FC<AllProps> = (props) => {
           <span></span>
         </Paper>
         <Navbar />
-        <div className={classes.main}>
           <Route exact path="/" component={Home} />
           <Route exact path="/contact" component={Contact} />
-        </div>
       </div>
     </ThemeProvider>
   )
