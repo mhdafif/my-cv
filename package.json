@@ -16,6 +16,7 @@
     "@types/react-router-dom": "^5.1.5",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-particles-js": "^3.2.1",
     "react-router-dom": "^5.2.0",
@@ -42,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-copy-to-clipboard": "^4.3.0"
   }
 }

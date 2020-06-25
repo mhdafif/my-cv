@@ -263,7 +263,8 @@ export const styles = (theme: Theme) => createStyles({
   },
   contactArea: {
     position: 'relative',
-    padding: '120px 0'
+    padding: '120px 0',
+    height: '100vh'
   },
   title: {
     marginBottom: '60px',
@@ -414,6 +415,7 @@ export const styles = (theme: Theme) => createStyles({
     },
     '& p': {
       marginBottom: 0,
+      position: 'relative',
       '& a': {
         color: '#a4acc4',
         transition: 'all .4s ease-out',
@@ -421,8 +423,45 @@ export const styles = (theme: Theme) => createStyles({
         '&:hover': {
           color: '#037fff'
         }
+      },
+      '& span.copyText': {
+        cursor: 'pointer',
+        color: '#a4acc4',
+        transition: 'all .4s ease-out',
+        '-webkit-transition': 'all .4s ease-out',
+        '&:hover': {
+          color: '#037fff'
+        },
       }
     }
+  },
+  copiedToolTip: {
+    visibility: 'hidden',
+    opacity: 0,
+    marginLeft: '5px',
+    background: `${blueColor}`,
+    color: '#fff',
+    width: '75px',
+    borderRadius: '6px',
+    padding: '0px 10px',
+    position: 'absolute',
+    left: '110%',
+    transition: 'all .4s ease-out',
+    '-webkit-transition': 'all .4s ease-out',
+    '&:after': {
+      content: `''`,
+      position: 'absolute',
+      top: '50%',
+      right: '100%',
+      marginTop: '-7px',
+      borderWidth: '7px',
+      borderStyle: 'solid',
+      borderColor: `transparent ${blueColor} transparent transparent`
+    }
+  },
+  copiedTooltipVisible: {
+    visibility: 'visible',
+    opacity: 1
   },
   cobaPaper: {
     width: '100%',

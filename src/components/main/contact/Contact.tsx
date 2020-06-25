@@ -4,8 +4,17 @@ import { styles } from 'styles';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import MapIcon from '@material-ui/icons/Room';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import classNames from 'classnames';
 
 interface Props {}
+
+interface IContact {
+  type: string;
+  value: string;
+  visible: boolean;
+  icon: any;
+}
 
 type AllProps 
   = WithStyles<typeof styles>
@@ -13,6 +22,37 @@ type AllProps
 
 const ContactComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
+  const [contacts, setContacs] = React.useState<IContact[]>([
+    {
+      type: 'Phone',
+      value: '081321972065',
+      visible: false,
+      icon: <PhoneIcon />
+    },
+    {
+      type: 'Email',
+      value: 'hammadaf9408@gmail.com',
+      visible: false,
+      icon: <EmailIcon />
+    },
+    {
+      type: 'Address',
+      value: 'Super Puma Raya no 9, Cimahi Selatan',
+      visible: false,
+      icon: <MapIcon />
+    },
+  ]);
+
+  const handleTooltip = (index: number) => {
+    let newContacts = [...contacts];
+    newContacts[index].visible = true;
+    setContacs(newContacts);
+    setTimeout(() => {
+      let resetContacts = [...contacts];
+      resetContacts[index].visible = false;
+      setContacs(resetContacts);
+    }, 1500)
+  }
 
   return (
     <div className={classes.contactArea}>
@@ -53,39 +93,26 @@ const ContactComp: React.FC<AllProps> = (props) => {
             </Grid>
             <Grid item xs={12} lg={6}>
               <div className={classes.contactInfo}>
-                <div className={classes.contactCard}>
-                  <span className={classes.contactIcon}>
-                    <PhoneIcon />
-                  </span>
-                  <div className={classes.contactContent}>
-                    <h6>Phone</h6>
-                    <p>
-                      <a href="/">081321972065</a>
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.contactCard}>
-                  <span className={classes.contactIcon}>
-                    <EmailIcon />
-                  </span>
-                  <div className={classes.contactContent}>
-                    <h6>Email</h6>
-                    <p>
-                      <a href="/">hammadaf9408@gmail.com</a>
-                    </p>
-                  </div>
-                </div>
-                <div className={classes.contactCard}>
-                  <span className={classes.contactIcon}>
-                    <MapIcon />
-                  </span>
-                  <div className={classes.contactContent}>
-                    <h6>Address</h6>
-                    <p>
-                      <a href="/">Super Puma Raya no 9, Cimahi Selatan</a>
-                    </p>
-                  </div>
-                </div>
+                {
+                  contacts.map((contact, index) => 
+                    <React.Fragment key={index}>
+                      <div className={classes.contactCard}>
+                        <span className={classes.contactIcon}>
+                          {contact.icon}
+                        </span>
+                        <div className={classes.contactContent}>
+                          <h6>{contact.type}</h6>
+                          <p>
+                            <CopyToClipboard onCopy={() => handleTooltip(index)} text={contact.value}>
+                              <span className="copyText">{contact.value}</span>
+                            </CopyToClipboard>
+                            <span className={classNames(classes.copiedToolTip, contact.visible ? classes.copiedTooltipVisible : '')}>Copied</span>
+                          </p>
+                        </div>
+                      </div>
+                    </React.Fragment>  
+                  )
+                }
               </div>
             </Grid>
           </Grid>
