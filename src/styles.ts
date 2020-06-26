@@ -18,7 +18,7 @@ export const styles = (theme: Theme) => createStyles({
   //     lineHeight: '1.8rem',
   //     fontWeight: 400,
   //     fontFamily: `'Baloo Chettan 2', cursive`,
-  //     color: `${fontColor}`,
+  //     color: fontColor,
   //   },
   //   'a': {
   //     textDecoration: 'none',
@@ -128,13 +128,13 @@ export const styles = (theme: Theme) => createStyles({
         letterSpacing: '1px',
         display: 'block',
         padding: '5px 0',
-        color: `${fontColor}`,
+        color: fontColor,
         fontWeight: '600',
         position: 'relative',
         overflow: 'hidden',
         zIndex: 1,
         '&:hover': {
-          color: `${blueColor}`,
+          color: blueColor,
           '&:before': {
             width: '100%',
             visibility: 'visible'
@@ -143,7 +143,7 @@ export const styles = (theme: Theme) => createStyles({
         '&.active': {
           color: '#fff',
           '&:before': {
-            background: `${blueColor}`,
+            background: blueColor,
             width: '100%',
             visibility: 'visible'
           }
@@ -173,14 +173,14 @@ export const styles = (theme: Theme) => createStyles({
     textAlign: 'center',
     marginBotton: 0,
     fontSize: '1rem',
-    padding: '15px 0',
+    paddingTop: '15px',
     borderTop: `1px solid ${borderColor}`,
     '& a': {
-      color: `${fontColor}`,
+      color: fontColor,
       '-webkit-transition': 'all .4s ease-out',
       transition: 'all .4s ease-out',
       '&:hover': {
-        color: `${blueColor}`
+        color: blueColor
       }
     }
   },
@@ -227,7 +227,7 @@ export const styles = (theme: Theme) => createStyles({
       fontWeight: 700
     },
     '& .color-theme': {
-      color: `${blueColor}`
+      color: blueColor
     },
     '& p': {
       marginTop: '15px',
@@ -248,9 +248,9 @@ export const styles = (theme: Theme) => createStyles({
       '& a': {
         '-webkit-transition': 'all .4s ease-out',
         transition: 'all .4s ease-out',
-        color: `${fontColor}`,
+        color: fontColor,
         '&:hover': {
-          color: `${blueColor}`,
+          color: blueColor,
         }
       },
       '&:hover': {
@@ -290,7 +290,7 @@ export const styles = (theme: Theme) => createStyles({
       },
       '&:after': {
         width: '35px',
-        background: `${blueColor}`
+        background: blueColor
       }
     },
     '& span': {
@@ -337,7 +337,7 @@ export const styles = (theme: Theme) => createStyles({
   button: {
     position: 'relative',
     padding: '0 30px',
-    background: `${blueColor}`,
+    background: blueColor,
     color: '#fff',
     border: 0,
     display: 'inline-block',
@@ -439,7 +439,7 @@ export const styles = (theme: Theme) => createStyles({
     visibility: 'hidden',
     opacity: 0,
     marginLeft: '5px',
-    background: `${blueColor}`,
+    background: blueColor,
     color: '#fff',
     width: '75px',
     borderRadius: '6px',
@@ -462,6 +462,111 @@ export const styles = (theme: Theme) => createStyles({
   copiedTooltipVisible: {
     visibility: 'visible',
     opacity: 1
+  },
+  skillArea: {
+    position: 'relative',
+    paddingTop: '120px',
+  },
+  skillItem: {
+    '& h6': {
+      fontWeight: 600,
+      marginBottom: 0,
+    },
+    '& .skill-progress': {
+      display: 'flex',
+      alignItems: 'center',
+      '& .skill-percentage': {
+        flex: '0  60px'
+      },
+      '& .skill-bar': {
+        background: '#2e344e',
+        display: 'block',
+        height: '6px',
+        width: '100%',
+        position: 'relative',
+        '& .skill-bar-active': {
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          height: '100%',
+          background: blueColor,
+          width: 0,
+          transition: 'all .4s ease-out',
+          '-webkit-transition': 'all .4s ease-out',
+        }
+      }
+    }
+  },
+  resumeArea: {
+    position: 'relative',
+    padding: '120px 0',
+  },
+  subTitle: {
+    display: 'flex',
+    alignItems: 'center',
+    '& .subTitle-icon': {
+      verticalAlign: 'middle',
+      marginRight: '10px',
+      fontSize: '1.71rem',
+      lineHeight: '2.43rem',
+      color: fontColor
+    },
+    '& h4': {
+      fontWeight: 700
+    }
+  },
+  resumeWrapper: {
+    borderLeft: '3px solid #2e344e',
+    '& .resume-item': {
+      display: 'flex',
+      marginTop: '30px',
+      '& .resume-date': {
+        alignSelf: 'flex-start',
+        flex: '0 0 180px',
+        maxWidth: '180px',
+        paddingLeft: '20px',
+        position: 'relative',
+        '&:before': {
+          content: `''`,
+          position: 'absolute',
+          left: '-9px',
+          top: '6px',
+          height: '15px',
+          width: '15px',
+          borderRadius: '100px',
+          background: '#10121b',
+          border: '3px solid #2e344e'
+        },
+        '& .resume-date-year': {
+          color : fontColor,
+          marginBottom: 0
+        }
+      },
+      '& .resume-detail': {
+        position: 'relative',
+        paddingLeft: '50px',
+        '&:before': {
+          content: `''`,
+          position: 'absolute',
+          left: 0,
+          top: '15px',
+          height: '1px',
+          width: '30px',
+          background: '#2e344e'
+        },
+        '& h5': {
+          color: blueColor,
+          marginBottom: 0,
+          fontWeight: 700
+        },
+        '& .resume-detail-company': {
+          color: '#fff'
+        },
+        '& p': {
+          marginBottom: 0
+        }
+      },
+    }
   },
   cobaPaper: {
     width: '100%',

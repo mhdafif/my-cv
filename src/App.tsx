@@ -1,12 +1,13 @@
 import React from 'react';
 import { WithStyles, withStyles, Paper, useMediaQuery, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { styles } from 'styles';
+import './App.css';
 import classNames from 'classnames';
 import { Navbar } from 'components/navbar/Navbar';
 import { Home } from 'components/main/home/Home';
 import { Route } from 'react-router-dom';
 import { Contact } from 'components/main/contact/Contact';
-import './App.css';
+import { Resume } from 'components/main/resume/Resume';
 
 interface Props {}
 
@@ -44,6 +45,7 @@ const AppComp: React.FC<AllProps> = (props) => {
         <Navbar />
           <Route exact path="/" component={Home} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/resume" component={Resume} />
       </div>
     </ThemeProvider>
   )
