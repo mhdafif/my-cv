@@ -77,7 +77,7 @@ const HomeComp: React.FC<AllProps> = (props) => {
       <Grid container className={classes.container2}>
         <Grid item xs={10} lg={7}>
           <div className={classes.homeContent}>
-            <h1>Hi, I am <span className="color-theme">Muhammad Afif</span></h1>
+            <h1>Hi, I am <span className={classes.colorTheme}>Muhammad Afif</span></h1>
             <p>
               I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.
             </p>

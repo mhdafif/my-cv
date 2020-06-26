@@ -220,14 +220,14 @@ export const styles = (theme: Theme) => createStyles({
   container2: {
     justifyContent: 'center',
   },
+  colorTheme: {
+    color: blueColor
+  },
   homeContent: {
     textAlign: 'center',
     padding: '50px 80px',
     '& h1': {
       fontWeight: 700
-    },
-    '& .color-theme': {
-      color: blueColor
     },
     '& p': {
       marginTop: '15px',
@@ -568,8 +568,177 @@ export const styles = (theme: Theme) => createStyles({
       },
     }
   },
-  cobaPaper: {
-    width: '100%',
-    height: '500px'
+  aboutArea: {
+    position: 'relative',
+    paddingTop: '120px',
   },
+  aboutImage: {
+    position: 'relative',
+    '&:before, &:after': {
+      content: `''`,
+      position: 'absolute',
+      height: '65%',
+      width: '15px',
+      background: 'rgba(3,127,255, .6)'
+    },
+    '& img': {
+      width: '100%',
+    },
+    '&:before': {
+      left: 0,
+      top: 0,
+    },
+    '&:after': {
+      left: 'auto',
+      right: 0,
+      top: 'auto',
+      bottom: 0
+    },
+    '&:hover': {
+      '& .about-image-zoom': {
+        visibility: 'visible',
+        opacity: .3,
+        '-webkit-transform': 'scale(1)',
+        transform: 'scale(1)'
+      }
+    },
+    '& .about-image-zoom': {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      height: '100px',
+      width: '100px',
+      marginLeft: '-50px',
+      marginTop: '-50px',
+      color: '#fff',
+      display: 'inline-block',
+      visiblity: 'hidden',
+      opacity: 0,
+      '-webkit-transform': 'scale(0)',
+      transform: 'scale(0)',
+      '-webkit-transition': 'all .4s ease-out 0s',
+      transition: 'all .4s ease-out 0s',
+      pointerEvents: 'none',
+      '& svg': {
+        height: '100%',
+        width: '100%'
+      }
+    }
+  },
+  aboutContent: {
+    // display: 'flex',
+    // height: '100%',
+    // flexWrap: 'wrap',
+    // alignContent: 'space-between',
+    '& h3': {
+      fontWeight: 600,
+      marginTop: '-8px'
+    },
+    '& ul li': {
+      listStyle: 'none',
+      display: 'flex',
+      '&:not(:last-child)': {
+        marginBottom: '3px'
+      },
+      '& b': {
+        minWidth: '120px',
+        display: 'inline-block',
+        position: 'relative',
+        marginRight: '7px',
+        '&:after': {
+          content: `':'`,
+          position: 'absolute',
+          top: 0,
+          left: 'auto',
+          right: 0
+        }
+      }
+    },
+    '& a': {
+      marginTop: '15px',
+
+    }
+  },
+  servicesArea: {
+    position: 'relative',
+    padding: '120px 0',
+  },
+  serviceItem: {
+    border: '1px solid #2e344e',
+    borderTop: '5px solid #2e344e',
+    padding: '30px',
+    background: '#191d2b',
+    '-webkit-transition': 'all .4s ease-out',
+    transition: 'all .4s ease-out',
+    '&:hover': {
+      borderTopColor: blueColor
+    },
+    '& .service-icon': {
+      marginBottom: '18px',
+      display: 'inline-block',
+      color: blueColor,
+      fontSize: '2.5rem',
+      '& svg': {
+        fontSize: '50px'
+      }
+    },
+    '& h5': {
+      fontWeight: 600,
+      position: 'relative',
+      paddingBottom: '15px',
+      marginBottom: '15px',
+      '&:before': {
+        content: '""',
+        position: 'absolute',
+        left: 0,
+        top: 'auto',
+        bottom: 0,
+        height: '2px',
+        width: '50px',
+        background: '#2e344e'
+      }
+    },
+    '& p': {
+      marginBottom: 0
+    }
+  },
+  reviewArea: {
+    position: 'relative',
+    // paddingTop: '120px',
+    paddingBottom: '120px',
+  },
+  reviewItem: {
+    '& .review-item-content': {
+      minHeight: '150px',
+      display: 'flex',
+      alignItems: 'center',
+      padding: '30px',
+      marginBottom: '35px',
+      position: 'relative',
+      borderLeft: '5px solid #2e344e',
+      background: '#191d2b',
+      '&:after': {
+        content: '""',
+        position: 'absolute',
+        left: '30px',
+        top: '100%',
+        borderColor: '#191d2b transparent transparent #191d2b',
+        borderStyle: 'solid',
+        borderWidth: '12px',
+      },
+      '& p': {
+        marginBottom: 0,
+        fontSize: '1.2rem'
+      }
+    },
+    '& .review-item-author': {
+      '& h5': {
+        marginBottom: 0
+      },
+      '& h6': {
+        marginBottom: 0,
+        color: fontColor
+      }
+    },
+  }
 })

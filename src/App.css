@@ -11,26 +11,30 @@
 }
 
 body {
+  /* overflow: hidden !important; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
   line-height: 1.8rem;
-  font-weight: 400;
   font-family: 'Baloo Chettan 2', cursive;
   color: #a4acc4;
-  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  background: #10121b;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  background-color: #383838;
 }
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: #383838;
-}
+} */
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #6b6b6b; 
-  border-radius: 5px;
+  border-radius: 10px;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -42,9 +46,33 @@ a {
   background-color: transparent;
 }
 
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:active, a:focus, a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+b, strong {
+  font-weight: bolder;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,9 +81,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
 }
 
+h1 {
+  font-size: 3.2857rem;
+  line-height: 4rem;
+}
+
 h2 {
   font-size: 2.57rem;
   line-height: 3.2857rem;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.7rem;
 }
 
 h4 {

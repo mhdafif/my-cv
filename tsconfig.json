@@ -28,8 +28,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types", "./typings/main.d.ts"]
   },
+  "files": [
+    "./typings/main.d.ts"
+  ],
   "include": [
     "src"
   ],
