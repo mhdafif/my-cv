@@ -80,6 +80,7 @@ export const styles = (theme: Theme) => createStyles({
     height: '100vh',
     width: '300px',
     background: '#191d2b',
+    // background: theme.palette.type === 'dark' ? '#191d2b' : '#fff',
     borderRight: `1px solid ${borderColor}`,
     zIndex: 10,
     '-webkit-transition': 'all .4s ease-out',
@@ -101,7 +102,7 @@ export const styles = (theme: Theme) => createStyles({
     width: '100%',
     textAlign: 'center',
     borderBottom: `1px solid ${borderColor}`,
-    '& div': {
+    '& .nav-image-avatar': {
       height: '200px',
       width: '200px',
       borderRadius: '1000px',
@@ -111,6 +112,41 @@ export const styles = (theme: Theme) => createStyles({
       cursor: 'pointer'
       // display: 'inline-block',
       // verticalAlign: 'middle'
+    },
+    '& .nav-image-theme': {
+      position: 'absolute',
+      right: '5px',
+      top: '10px',
+      overflow: 'hidden',
+      '& .light-icon': {
+        color: '#fbc02d',
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        transform: theme.palette.type === 'light' ? 'translateX(0)' : 'translateX(36px)',
+        transitionDelay: theme.palette.type === 'light' ? '0' : '1s',
+        '&:hover': {
+          color: '#fbdc2d',
+          backgroundColor: 'unset'
+        }
+      },
+      '& .dark-icon': {
+        position: 'absolute',
+        color: '#547ae8',
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        transform: theme.palette.type === 'dark' ? 'translateX(0)' : 'translateX(36px)',
+        transitionDelay: theme.palette.type === 'dark' ? '0' : '1s',
+        '&:hover': {
+          color: '#548de8',
+          backgroundColor: 'unset'
+        }
+      },
+      '& span': {
+        padding: '0',
+        '& svg': {
+          fontSize: '30px',
+        }
+      }
     }
   },
   navMenu: {

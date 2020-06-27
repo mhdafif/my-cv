@@ -1,7 +1,10 @@
 import React from 'react'
-import { WithStyles, withStyles, Avatar } from '@material-ui/core';
+import { WithStyles, withStyles, Avatar, IconButton } from '@material-ui/core';
 import { styles } from 'styles';
 import avatar from 'image/nonik.png';
+import SunIcon from '@material-ui/icons/Brightness7';
+import { ThemeContext } from 'context/theme/themeContext';
+import MoonIcon from '@material-ui/icons/Brightness4';
 
 interface Props {}
 
@@ -11,10 +14,20 @@ type AllProps
 
 const NavImageComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
-
+  const themeContext = React.useContext(ThemeContext);
+  const { setTheme } = themeContext;
+  
   return (
     <div className={classes.navImage}>
-      <Avatar src={avatar} onClick={() => console.log('a')} />
+      <Avatar className="nav-image-avatar" src={avatar} onClick={() => console.log('foto')} />
+      <div className="nav-image-theme">
+        <IconButton className='dark-icon' component="span" onClick={setTheme}>
+          <MoonIcon /> 
+        </IconButton>
+        <IconButton className='light-icon' component="span" onClick={setTheme}>
+          <SunIcon /> 
+        </IconButton>
+      </div>
     </div>
   )
 }
