@@ -115,15 +115,17 @@ export const styles = (theme: Theme) => createStyles({
     },
     '& .nav-image-theme': {
       position: 'absolute',
-      right: '5px',
-      top: '10px',
+      left: '0',
+      top: '0',
+      padding: '10px 5px',
       overflow: 'hidden',
       '& .light-icon': {
         color: '#fbc02d',
         '-webkit-transition': 'all .4s ease-out',
+        '-webkit-transition-delay': theme.palette.type === 'light' ? '.2s' : '0',
         transition: 'all .4s ease-out',
-        transform: theme.palette.type === 'light' ? 'translateX(0)' : 'translateX(36px)',
-        transitionDelay: theme.palette.type === 'light' ? '0' : '1s',
+        transitionDelay: theme.palette.type === 'light' ? '.2s' : '0',
+        transform: theme.palette.type === 'light' ? 'translate(0)' : 'translate(-36px, -36px)',
         '&:hover': {
           color: '#fbdc2d',
           backgroundColor: 'unset'
@@ -133,9 +135,10 @@ export const styles = (theme: Theme) => createStyles({
         position: 'absolute',
         color: '#547ae8',
         '-webkit-transition': 'all .4s ease-out',
+        '-webkit-transition-delay': theme.palette.type === 'dark' ? '.2s' : '0',
         transition: 'all .4s ease-out',
-        transform: theme.palette.type === 'dark' ? 'translateX(0)' : 'translateX(36px)',
-        transitionDelay: theme.palette.type === 'dark' ? '0' : '1s',
+        transitionDelay: theme.palette.type === 'dark' ? '.2s' : '0',
+        transform: theme.palette.type === 'dark' ? 'translate(0)' : 'translate(-36px, -36px)',
         '&:hover': {
           color: '#548de8',
           backgroundColor: 'unset'
