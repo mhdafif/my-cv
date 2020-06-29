@@ -11,6 +11,7 @@ import { Resume } from 'components/main/resume/Resume';
 import { About } from 'components/main/about/About';
 import { ThemeState } from 'context/theme/ThemeState';
 import { Layout } from 'components/layout/Layout';
+import { Portofolio } from 'components/main/portofolio/Portofolio';
 
 interface Props {}
 
@@ -37,6 +38,7 @@ const AppComp: React.FC<AllProps> = (props) => {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/resume" component={Resume} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/portofolio" component={Portofolio} />
         </div>
       </Layout>
     </ThemeState>

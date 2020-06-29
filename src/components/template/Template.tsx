@@ -1,5 +1,5 @@
 import React from 'react'
-import { WithStyles, withStyles } from '@material-ui/core';
+import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
 
 interface Props {}
@@ -9,11 +9,13 @@ type AllProps
   & Props;
 
 const TemplateComp: React.FC<AllProps> = (props) => {
-  // const { classes } = props;
+  const { classes } = props;
 
   return (
-    <div>
-
+    <div className={''}>
+      <Grid container className={classes.container2}>
+        
+      </Grid>
     </div>
   )
 }

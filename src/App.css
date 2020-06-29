@@ -149,6 +149,13 @@ button, input, optgroup, select, textarea {
   line-height: inherit;
 }
 
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 input:focus, textarea:focus, select:focus{
   outline: none;
 }

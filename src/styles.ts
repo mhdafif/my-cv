@@ -126,6 +126,8 @@ export const styles = (theme: Theme) => createStyles({
         transition: 'all .4s ease-out',
         transitionDelay: theme.palette.type === 'light' ? '.2s' : '0',
         transform: theme.palette.type === 'light' ? 'translate(0)' : 'translate(-36px, -36px)',
+        visibility: theme.palette.type === 'light' ? 'visible' : 'hidden',
+        opacity: theme.palette.type === 'light' ? '1' : '0',
         '&:hover': {
           color: '#fbdc2d',
           backgroundColor: 'unset'
@@ -139,6 +141,8 @@ export const styles = (theme: Theme) => createStyles({
         transition: 'all .4s ease-out',
         transitionDelay: theme.palette.type === 'dark' ? '.2s' : '0',
         transform: theme.palette.type === 'dark' ? 'translate(0)' : 'translate(-36px, -36px)',
+        visibility: theme.palette.type === 'dark' ? 'visible' : 'hidden',
+        opacity: theme.palette.type === 'dark' ? '1' : '0',
         '&:hover': {
           color: '#548de8',
           backgroundColor: 'unset'
@@ -388,7 +392,7 @@ export const styles = (theme: Theme) => createStyles({
     lineHeight: '50px',
     transition: 'all .4s ease-out',
     '-webkit-transition': 'all .4s ease-out',
-    cursor: 'pointer',
+    // cursor: 'pointer',
     '&:hover': {
       color: '#fff',
       '&:before': {
@@ -777,6 +781,109 @@ export const styles = (theme: Theme) => createStyles({
       '& h6': {
         marginBottom: 0,
         color: fontColor
+      }
+    },
+  },
+  portofolioArea: {
+    position: 'relative',
+    paddingTop: '120px',
+    paddingBottom: '120px',
+    '& .portofolio-item': {
+      '&:hover': {
+        '& .portofolio-image': {
+          '&:before': {
+            '-webkit-transform': 'scaleX(1)',
+            transform: 'scaleX(1)'
+          },
+          '& ul': {
+            visibility: 'visible',
+            opacity: 1,
+            marginTop: 0
+          }
+        }
+      },
+      '& .portofolio-image': {
+        display: 'block',
+        position: 'relative',
+        '&:before': {
+          content: '""',
+          position: 'absolute',
+          left: '15px',
+          top: '15px',
+          height: 'calc(100% - 30px)',
+          width: 'calc(100% - 30px)',
+          background: 'hsla(0, 0%, 100%, .9)',
+          '-webkit-transition': 'all .4s ease-out',
+          transition: 'all .4s ease-out',
+          '-webkit-transform': 'scaleX(0)',
+          transform: 'scaleX(0)',
+          '-webkit-transform-origin': 0,
+          transformOrigin: 0
+        },
+        '& ul': {
+          marginBottom: 0,
+          marginLeft: 0,
+          position: 'absolute',
+          left: 0,
+          top: '50%',
+          textAlign: 'center',
+          width: '100%',
+          '-webkit-transform': 'translateY(-50%)',
+          transform: 'translateY(-50%)',
+          visibility: 'hidden',
+          opacity: 0,
+          marginTop: '30px',
+          '-webkit-transition': 'all .4s ease-out',
+          transition: 'all .4s ease-out',
+          '& li': {
+            listStyle: 'none',
+            display: 'inline-block',
+            margin: '0 7px',
+            '& button, & a': {
+              display: 'inline-block',
+              height: '45px',
+              width: '45px',
+              padding: '5px 0',
+              verticalAlign: 'middle',
+              textAlign: 'center',
+              lineHeight: 1,
+              background: '#a4acc4',
+              color: '#fff',
+              border: '1px solid #a4acc4',
+              borderRadius: '100px',
+              outline: 'none',
+              fontSize: '1.25rem',
+              '-webkit-transition': 'all .4s ease-out',
+              transition: 'all .4s ease-out',
+              '&:hover': {
+                background: '#037fff',
+                borderColor: '#037fff'
+              },
+              '& svg': {
+                height: '100%',
+                fontSize: '2.1875rem'
+              }
+            }
+          }
+        }
+      },
+      '& h5': {
+        color: '#fff',
+        marginTop: '15px',
+        marginBottom: 0,
+        fontWeight: 700,
+        '& a': {
+          color: '#fff',
+          '-webkit-transition': 'all .4s ease-out',
+          transition: 'all .4s ease-out',
+          '&:hover': {
+            color: blueColor
+          }
+        }
+      },
+      '& h6': {
+        color: '#a4acc4',
+        marginBottom: 0
       }
     },
   }
