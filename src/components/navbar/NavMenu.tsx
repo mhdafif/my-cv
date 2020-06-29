@@ -11,6 +11,7 @@ enum Path {
   Resume = '/resume',
   Portofolio = '/portofolio',
   Blogs = '/blogs',
+  BlogsDetail = '/blogs/detail',
   Contact = '/contact',
 }
 
@@ -43,7 +44,7 @@ const NavMenuComp: React.FC<AllProps> = (props) => {
         <NavLink activeClassName={path === Path.Portofolio ? 'active' : ''} to="/portofolio">Portofolio</NavLink>
       </li>
       <li>
-        <NavLink activeClassName={path === Path.Blogs ? 'active' : ''} to="/blogs">Blogs</NavLink>
+        <NavLink activeClassName={path === Path.Blogs || Path.BlogsDetail ? 'active' : ''} to="/blogs">Blogs</NavLink>
       </li>
       <li>
         <NavLink activeClassName={path === Path.Contact ? 'active' : ''} to="/contact">Contact</NavLink>

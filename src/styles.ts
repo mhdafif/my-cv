@@ -1,30 +1,22 @@
 import { Theme, createStyles } from "@material-ui/core";
 
-const borderColor = '#2e344e';
-const fontColor = '#a4acc4';
-const blueColor = '#037fff';
+const blueBorder = '#2e344e';
+const gray = '#a4acc4';
+const blue = '#037fff';
+
+// const navColorLight = '#FCFCE4';
+// const white = '#F4FCFC';
+// const orange = '#E65A0D';
+// const black = '#3C3C3C';
 
 export const styles = (theme: Theme) => createStyles({
   toolbar: theme.mixins.toolbar,
-  // '@global': {
-  //   '*': {
-  //     boxSizing: 'border-box',
-  //     margin: 0,
-  //     padding: 0
-  //   },
-  //   'body': {
-  //     '-webkit-font-smoothing': 'antialiased',
-  //     fontSize: '18px',
-  //     lineHeight: '1.8rem',
-  //     fontWeight: 400,
-  //     fontFamily: `'Baloo Chettan 2', cursive`,
-  //     color: fontColor,
-  //   },
-  //   'a': {
-  //     textDecoration: 'none',
-  //     backgroundColor: 'transparent'
-  //   }
-  // },
+  layoutBody: {
+    color: gray,
+    background: theme.palette.type === 'dark' ? '#10121b' : '#fff',
+    transition: 'all .4s ease-out',
+    '-webkit-transition': 'all .4s ease-out',
+  },
   wrapper: {
     paddingLeft: '300px',
     position: 'relative',
@@ -38,7 +30,6 @@ export const styles = (theme: Theme) => createStyles({
     position: 'absolute',
   },
   bgLines: {
-    background: '#10121b',
     left: '300px',
     width: 'calc(100% - 300px)',
     zIndex: -1,
@@ -81,7 +72,7 @@ export const styles = (theme: Theme) => createStyles({
     width: '300px',
     background: '#191d2b',
     // background: theme.palette.type === 'dark' ? '#191d2b' : '#fff',
-    borderRight: `1px solid ${borderColor}`,
+    borderRight: `1px solid ${blueBorder}`,
     zIndex: 10,
     '-webkit-transition': 'all .4s ease-out',
     transition: 'all .4s ease-out'
@@ -101,12 +92,12 @@ export const styles = (theme: Theme) => createStyles({
     display: 'block',
     width: '100%',
     textAlign: 'center',
-    borderBottom: `1px solid ${borderColor}`,
+    borderBottom: `1px solid ${blueBorder}`,
     '& .nav-image-avatar': {
       height: '200px',
       width: '200px',
       borderRadius: '1000px',
-      border: `7px solid ${borderColor}`,
+      border: `7px solid ${blueBorder}`,
       overflow: 'hidden',
       margin: '0 auto',
       cursor: 'pointer'
@@ -171,13 +162,13 @@ export const styles = (theme: Theme) => createStyles({
         letterSpacing: '1px',
         display: 'block',
         padding: '5px 0',
-        color: fontColor,
+        color: gray,
         fontWeight: '600',
         position: 'relative',
         overflow: 'hidden',
         zIndex: 1,
         '&:hover': {
-          color: blueColor,
+          color: blue,
           '&:before': {
             width: '100%',
             visibility: 'visible'
@@ -186,7 +177,7 @@ export const styles = (theme: Theme) => createStyles({
         '&.active': {
           color: '#fff',
           '&:before': {
-            background: blueColor,
+            background: blue,
             width: '100%',
             visibility: 'visible'
           }
@@ -217,13 +208,13 @@ export const styles = (theme: Theme) => createStyles({
     marginBotton: 0,
     fontSize: '1rem',
     paddingTop: '15px',
-    borderTop: `1px solid ${borderColor}`,
+    borderTop: `1px solid ${blueBorder}`,
     '& a': {
-      color: fontColor,
+      color: gray,
       '-webkit-transition': 'all .4s ease-out',
       transition: 'all .4s ease-out',
       '&:hover': {
-        color: blueColor
+        color: blue
       }
     }
   },
@@ -264,7 +255,7 @@ export const styles = (theme: Theme) => createStyles({
     justifyContent: 'center',
   },
   colorTheme: {
-    color: blueColor
+    color: blue
   },
   homeContent: {
     textAlign: 'center',
@@ -291,9 +282,9 @@ export const styles = (theme: Theme) => createStyles({
       '& a': {
         '-webkit-transition': 'all .4s ease-out',
         transition: 'all .4s ease-out',
-        color: fontColor,
+        color: gray,
         '&:hover': {
-          color: blueColor,
+          color: blue,
         }
       },
       '&:hover': {
@@ -333,7 +324,7 @@ export const styles = (theme: Theme) => createStyles({
       },
       '&:after': {
         width: '35px',
-        background: blueColor
+        background: blue
       }
     },
     '& span': {
@@ -369,7 +360,7 @@ export const styles = (theme: Theme) => createStyles({
       fontSize: '.94rem'
     },
     '& input, & textarea': {
-      border: '1px solid #2e344e',
+      border: `1px solid ${blueBorder}`,
       fontSize: '1rem'
     }
   },
@@ -380,7 +371,7 @@ export const styles = (theme: Theme) => createStyles({
   button: {
     position: 'relative',
     padding: '0 30px',
-    background: blueColor,
+    background: blue,
     color: '#fff',
     border: 0,
     display: 'inline-block',
@@ -431,7 +422,7 @@ export const styles = (theme: Theme) => createStyles({
       transition: 'all .4s ease-out',
       '-webkit-transition': 'all .4s ease-out',
       transform: 'scale(1.3)',
-      color: '#037fff'
+      color: blue
     }
   },
   contactIcon: {
@@ -440,7 +431,7 @@ export const styles = (theme: Theme) => createStyles({
     width: '60px',
     flex: '0 0 60px',
     maxWidth: '60px',
-    border: '1px solid #2e344e',
+    border: `1px solid ${blueBorder}`,
     textAlign: 'center',
     lineHeight: '76px',
     marginRight: '20px',
@@ -460,20 +451,20 @@ export const styles = (theme: Theme) => createStyles({
       marginBottom: 0,
       position: 'relative',
       '& a': {
-        color: '#a4acc4',
+        color: gray,
         transition: 'all .4s ease-out',
         '-webkit-transition': 'all .4s ease-out',
         '&:hover': {
-          color: '#037fff'
+          color: blue
         }
       },
       '& span.copyText': {
         cursor: 'pointer',
-        color: '#a4acc4',
+        color: gray,
         transition: 'all .4s ease-out',
         '-webkit-transition': 'all .4s ease-out',
         '&:hover': {
-          color: '#037fff'
+          color: blue
         },
       }
     }
@@ -482,7 +473,7 @@ export const styles = (theme: Theme) => createStyles({
     visibility: 'hidden',
     opacity: 0,
     marginLeft: '5px',
-    background: blueColor,
+    background: blue,
     color: '#fff',
     width: '75px',
     borderRadius: '6px',
@@ -499,7 +490,7 @@ export const styles = (theme: Theme) => createStyles({
       marginTop: '-7px',
       borderWidth: '7px',
       borderStyle: 'solid',
-      borderColor: `transparent ${blueColor} transparent transparent`
+      blueBorder: `transparent ${blue} transparent transparent`
     }
   },
   copiedTooltipVisible: {
@@ -522,7 +513,7 @@ export const styles = (theme: Theme) => createStyles({
         flex: '0  60px'
       },
       '& .skill-bar': {
-        background: '#2e344e',
+        background: blueBorder,
         display: 'block',
         height: '6px',
         width: '100%',
@@ -532,7 +523,7 @@ export const styles = (theme: Theme) => createStyles({
           left: 0,
           top: 0,
           height: '100%',
-          background: blueColor,
+          background: blue,
           width: 0,
           transition: 'all .4s ease-out',
           '-webkit-transition': 'all .4s ease-out',
@@ -552,14 +543,14 @@ export const styles = (theme: Theme) => createStyles({
       marginRight: '10px',
       fontSize: '1.71rem',
       lineHeight: '2.43rem',
-      color: fontColor
+      color: gray
     },
     '& h4': {
       fontWeight: 700
     }
   },
   resumeWrapper: {
-    borderLeft: '3px solid #2e344e',
+    borderLeft: `3px solid ${blueBorder}`,
     '& .resume-item': {
       display: 'flex',
       marginTop: '30px',
@@ -578,10 +569,10 @@ export const styles = (theme: Theme) => createStyles({
           width: '15px',
           borderRadius: '100px',
           background: '#10121b',
-          border: '3px solid #2e344e'
+          border: `3px solid ${blueBorder}`
         },
         '& .resume-date-year': {
-          color : fontColor,
+          color : gray,
           marginBottom: 0
         }
       },
@@ -595,10 +586,10 @@ export const styles = (theme: Theme) => createStyles({
           top: '15px',
           height: '1px',
           width: '30px',
-          background: '#2e344e'
+          background: blueBorder
         },
         '& h5': {
-          color: blueColor,
+          color: blue,
           marginBottom: 0,
           fontWeight: 700
         },
@@ -707,19 +698,19 @@ export const styles = (theme: Theme) => createStyles({
     padding: '120px 0',
   },
   serviceItem: {
-    border: '1px solid #2e344e',
-    borderTop: '5px solid #2e344e',
+    border: `1px solid ${blueBorder}`,
+    borderTop: `5px solid ${blueBorder}`,
     padding: '30px',
     background: '#191d2b',
     '-webkit-transition': 'all .4s ease-out',
     transition: 'all .4s ease-out',
     '&:hover': {
-      borderTopColor: blueColor
+      borderTopColor: blue
     },
     '& .service-icon': {
       marginBottom: '18px',
       display: 'inline-block',
-      color: blueColor,
+      color: blue,
       fontSize: '2.5rem',
       '& svg': {
         fontSize: '50px'
@@ -738,7 +729,7 @@ export const styles = (theme: Theme) => createStyles({
         bottom: 0,
         height: '2px',
         width: '50px',
-        background: '#2e344e'
+        background: blueBorder
       }
     },
     '& p': {
@@ -758,14 +749,14 @@ export const styles = (theme: Theme) => createStyles({
       padding: '30px',
       marginBottom: '35px',
       position: 'relative',
-      borderLeft: '5px solid #2e344e',
+      borderLeft: `5px solid ${blueBorder}`,
       background: '#191d2b',
       '&:after': {
         content: '""',
         position: 'absolute',
         left: '30px',
         top: '100%',
-        borderColor: '#191d2b transparent transparent #191d2b',
+        blueBorder: '#191d2b transparent transparent #191d2b',
         borderStyle: 'solid',
         borderWidth: '12px',
       },
@@ -780,7 +771,7 @@ export const styles = (theme: Theme) => createStyles({
       },
       '& h6': {
         marginBottom: 0,
-        color: fontColor
+        color: gray
       }
     },
   },
@@ -788,103 +779,181 @@ export const styles = (theme: Theme) => createStyles({
     position: 'relative',
     paddingTop: '120px',
     paddingBottom: '120px',
-    '& .portofolio-item': {
-      '&:hover': {
-        '& .portofolio-image': {
-          '&:before': {
-            '-webkit-transform': 'scaleX(1)',
-            transform: 'scaleX(1)'
-          },
-          '& ul': {
-            visibility: 'visible',
-            opacity: 1,
-            marginTop: 0
-          }
-        }
-      },
+  },
+  portofolioItem: {
+    '&:hover': {
       '& .portofolio-image': {
-        display: 'block',
-        position: 'relative',
         '&:before': {
-          content: '""',
-          position: 'absolute',
-          left: '15px',
-          top: '15px',
-          height: 'calc(100% - 30px)',
-          width: 'calc(100% - 30px)',
-          background: 'hsla(0, 0%, 100%, .9)',
-          '-webkit-transition': 'all .4s ease-out',
-          transition: 'all .4s ease-out',
-          '-webkit-transform': 'scaleX(0)',
-          transform: 'scaleX(0)',
-          '-webkit-transform-origin': 0,
-          transformOrigin: 0
+          '-webkit-transform': 'scaleX(1)',
+          transform: 'scaleX(1)'
         },
         '& ul': {
-          marginBottom: 0,
-          marginLeft: 0,
-          position: 'absolute',
-          left: 0,
-          top: '50%',
-          textAlign: 'center',
-          width: '100%',
-          '-webkit-transform': 'translateY(-50%)',
-          transform: 'translateY(-50%)',
-          visibility: 'hidden',
-          opacity: 0,
-          marginTop: '30px',
-          '-webkit-transition': 'all .4s ease-out',
-          transition: 'all .4s ease-out',
-          '& li': {
-            listStyle: 'none',
+          visibility: 'visible',
+          opacity: 1,
+          marginTop: 0
+        }
+      }
+    },
+    '& .portofolio-image': {
+      display: 'block',
+      position: 'relative',
+      '&:before': {
+        content: '""',
+        position: 'absolute',
+        left: '15px',
+        top: '15px',
+        height: 'calc(100% - 30px)',
+        width: 'calc(100% - 30px)',
+        background: 'hsla(0, 0%, 100%, .9)',
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        '-webkit-transform': 'scaleX(0)',
+        transform: 'scaleX(0)',
+        '-webkit-transform-origin': 0,
+        transformOrigin: 0
+      },
+      '& ul': {
+        marginBottom: 0,
+        marginLeft: 0,
+        position: 'absolute',
+        left: 0,
+        top: '50%',
+        textAlign: 'center',
+        width: '100%',
+        '-webkit-transform': 'translateY(-50%)',
+        transform: 'translateY(-50%)',
+        visibility: 'hidden',
+        opacity: 0,
+        marginTop: '30px',
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        '& li': {
+          listStyle: 'none',
+          display: 'inline-block',
+          margin: '0 7px',
+          '& button, & a': {
             display: 'inline-block',
-            margin: '0 7px',
-            '& button, & a': {
-              display: 'inline-block',
-              height: '45px',
-              width: '45px',
-              padding: '5px 0',
-              verticalAlign: 'middle',
-              textAlign: 'center',
-              lineHeight: 1,
-              background: '#a4acc4',
-              color: '#fff',
-              border: '1px solid #a4acc4',
-              borderRadius: '100px',
-              outline: 'none',
-              fontSize: '1.25rem',
-              '-webkit-transition': 'all .4s ease-out',
-              transition: 'all .4s ease-out',
-              '&:hover': {
-                background: '#037fff',
-                borderColor: '#037fff'
-              },
-              '& svg': {
-                height: '100%',
-                fontSize: '2.1875rem'
-              }
+            height: '45px',
+            width: '45px',
+            padding: '5px 0',
+            verticalAlign: 'middle',
+            textAlign: 'center',
+            lineHeight: 1,
+            background: gray,
+            color: '#fff',
+            border: `1px solid ${gray}`,
+            borderRadius: '100px',
+            outline: 'none',
+            fontSize: '1.25rem',
+            '-webkit-transition': 'all .4s ease-out',
+            transition: 'all .4s ease-out',
+            '&:hover': {
+              background: blue,
+              blueBorder: blue
+            },
+            '& svg': {
+              height: '100%',
+              fontSize: '2.1875rem'
             }
           }
         }
-      },
-      '& h5': {
-        color: '#fff',
-        marginTop: '15px',
-        marginBottom: 0,
-        fontWeight: 700,
-        '& a': {
-          color: '#fff',
-          '-webkit-transition': 'all .4s ease-out',
-          transition: 'all .4s ease-out',
-          '&:hover': {
-            color: blueColor
-          }
-        }
-      },
-      '& h6': {
-        color: '#a4acc4',
-        marginBottom: 0
       }
     },
+    '& h5': {
+      color: '#fff',
+      marginTop: '15px',
+      marginBottom: 0,
+      fontWeight: 700,
+      '& a': {
+        color: '#fff',
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+        '&:hover': {
+          color: blue
+        }
+      }
+    },
+    '& h6': {
+      color: gray,
+      marginBottom: 0
+    }
+  },
+  blogsArea: {
+    position: 'relative',
+    paddingTop: '120px',
+    paddingBottom: '120px', 
+  },
+  blogItem: {
+    background: '#191d2b',
+    padding: '15px',
+    '&:hover': {
+      '& .blog-item-image img': {
+        '-webkit-transform': 'scale(1.15)',
+        transform: 'scale(1.15)'
+      }
+    },
+    '& .blog-item-image': {
+      position: 'relative',
+      overflow: 'hidden',
+      '& img': {
+        '-webkit-transition': 'all .4s ease-out',
+        transition: 'all .4s ease-out',
+      },
+      '& .blog-item-date': {
+        position: 'absolute',
+        left: '20px',
+        top: '20px',
+        background: 'rgba(3,127,255,.8)',
+        color: '#fff',
+        padding: '10px',
+        textAlign: 'center',
+        minWidth: '80px',
+        minHeight: '80px',
+        '& span': {
+          display: 'block'
+        },
+        '& .date': {
+          fontSize: '2.5rem',
+          lineHeight: 1,
+          fontWeight: 700
+        },
+        '& .month': {
+          fontSize: '1.3rem',
+          lineHeight: 1,
+          fontWeight: 700
+        },
+      }
+    },
+    '& .blog-item-content': {
+      paddingTop: '15px',
+      '& h5': {
+        fontWeight: 600,
+        marginBottom: 0,
+        '& a': {
+          '-webkit-transition': 'all .4s ease-out',
+          transition: 'all .4s ease-out',
+          color: '#fff',
+          display: 'block',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap'
+        }
+      }
+    }
+  },
+  blogsDetailArea: {
+    position: 'relative',
+    paddingTop: '120px',
+    paddingBottom: '120px',
+    '& img': {
+      marginBottom: '15px'
+    },
+    '& h3': {
+      fontWeight: 700
+    },
+    '& blockquote': {
+      marginTop: '25px',
+      marginBottom: '25px'
+    }
   }
 })

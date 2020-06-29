@@ -2,9 +2,11 @@ import React from 'react'
 import { WithStyles, withStyles, Avatar, IconButton } from '@material-ui/core';
 import { styles } from 'styles';
 import avatar from 'image/nonik.png';
-import SunIcon from '@material-ui/icons/Brightness7';
 import { ThemeContext } from 'context/theme/themeContext';
-import MoonIcon from '@material-ui/icons/Brightness4';
+// import SunIcon from '@material-ui/icons/Brightness7';
+// import MoonIcon from '@material-ui/icons/Brightness4';
+import MoonIcon from '@material-ui/icons/NightsStay';
+import SunIcon from '@material-ui/icons/WbSunny';
 
 interface Props {}
 

@@ -9,9 +9,11 @@ import { Route } from 'react-router-dom';
 import { Contact } from 'components/main/contact/Contact';
 import { Resume } from 'components/main/resume/Resume';
 import { About } from 'components/main/about/About';
-import { ThemeState } from 'context/theme/ThemeState';
-import { Layout } from 'components/layout/Layout';
 import { Portofolio } from 'components/main/portofolio/Portofolio';
+import { ThemeRoot, LayoutRoot } from 'components/layout';
+import { ThemeState } from 'context/theme/ThemeState';
+import { Blogs } from 'components/main/blogs/Blogs';
+import { BlogDetail } from 'components/main/blogs/BlogDetail';
 
 interface Props {}
 
@@ -24,23 +26,27 @@ const AppComp: React.FC<AllProps> = (props) => {
 
   return (
     <ThemeState>
-      <Layout>
-        <div className={classes.wrapper}>
-          <div className={classNames(classes.bgLinesRaw, classes.bgLines)}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+      <ThemeRoot>
+        <LayoutRoot>
+          <div className={classes.wrapper}>
+            <div className={classNames(classes.bgLinesRaw, classes.bgLines)}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/portofolio" component={Portofolio} />
+            <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/blogs/detail" component={BlogDetail} />
           </div>
-          <Navbar />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/resume" component={Resume} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/portofolio" component={Portofolio} />
-        </div>
-      </Layout>
+        </LayoutRoot>
+      </ThemeRoot>
     </ThemeState>
   )
 }

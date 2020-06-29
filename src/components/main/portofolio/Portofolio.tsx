@@ -2,7 +2,7 @@ import React from 'react'
 import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
 // import imgNonik from 'image/nonik.png';
-import zelda from 'image/zelda.png';
+import cocobo from 'image/cocobo.png';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import LinkIcon from '@material-ui/icons/Link';
 
@@ -30,9 +30,9 @@ const PortofolioComp: React.FC<AllProps> = (props) => {
             {
               dummy.map((item, index) => 
                 <Grid item xs={12} md={6} lg={4}>
-                  <div className="portofolio-item">
+                  <div className={classes.portofolioItem}>
                     <div className='portofolio-image'>
-                      <img src={zelda} alt="Cocobo" />
+                      <img src={cocobo} alt="Cocobo" />
                       <ul>
                         <li>
                           <button>
