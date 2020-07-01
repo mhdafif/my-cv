@@ -93,6 +93,7 @@ export const styles = (theme: Theme) => createStyles({
     width: '100%',
     textAlign: 'center',
     borderBottom: `1px solid ${blueBorder}`,
+    position: 'relative',
     '& .nav-image-avatar': {
       height: '200px',
       width: '200px',
@@ -101,13 +102,11 @@ export const styles = (theme: Theme) => createStyles({
       overflow: 'hidden',
       margin: '0 auto',
       cursor: 'pointer'
-      // display: 'inline-block',
-      // verticalAlign: 'middle'
     },
     '& .nav-image-theme': {
       position: 'absolute',
-      left: '0',
-      top: '0',
+      right: '0',
+      bottom: '0',
       padding: '10px 5px',
       overflow: 'hidden',
       '& .light-icon': {
@@ -116,7 +115,7 @@ export const styles = (theme: Theme) => createStyles({
         '-webkit-transition-delay': theme.palette.type === 'light' ? '.2s' : '0',
         transition: 'all .4s ease-out',
         transitionDelay: theme.palette.type === 'light' ? '.2s' : '0',
-        transform: theme.palette.type === 'light' ? 'translate(0)' : 'translate(-36px, -36px)',
+        transform: theme.palette.type === 'light' ? 'translate(0)' : 'translate(36px, 36px)',
         visibility: theme.palette.type === 'light' ? 'visible' : 'hidden',
         opacity: theme.palette.type === 'light' ? '1' : '0',
         '&:hover': {
@@ -131,7 +130,7 @@ export const styles = (theme: Theme) => createStyles({
         '-webkit-transition-delay': theme.palette.type === 'dark' ? '.2s' : '0',
         transition: 'all .4s ease-out',
         transitionDelay: theme.palette.type === 'dark' ? '.2s' : '0',
-        transform: theme.palette.type === 'dark' ? 'translate(0)' : 'translate(-36px, -36px)',
+        transform: theme.palette.type === 'dark' ? 'translate(0)' : 'translate(36px, 36px)',
         visibility: theme.palette.type === 'dark' ? 'visible' : 'hidden',
         opacity: theme.palette.type === 'dark' ? '1' : '0',
         '&:hover': {
@@ -170,30 +169,60 @@ export const styles = (theme: Theme) => createStyles({
         '&:hover': {
           color: blue,
           '&:before': {
-            width: '100%',
-            visibility: 'visible'
+            // visibility: 'visible',
+            // transform: 'scaleX(1)',
+            // transformOrigin: 'center',
+          },
+          '&:after': {
+            '-webkit-transform': 'scaleX(1)',
+            transform: 'scaleX(1)',
+            '-webkit-transform-origin': 'left right',
+            transformOrigin: 'left',
           }
         },
         '&.active': {
           color: '#fff',
           '&:before': {
+          //   background: blue,
+          //   width: '100%',
+          //   visibility: 'visible'
+          },
+          '&:after': {
             background: blue,
-            width: '100%',
-            visibility: 'visible'
-          }
+            '-webkit-transform': 'scaleX(1)',
+            transform: 'scaleX(1)',
+          },
         },
         '&:before': {
-          content: `''`,
+          // content: `''`,
+          // position: 'absolute',
+          // top: 0,
+          // left: 0,
+          // height: '100%',
+          // width: '100%',
+          // background: 'rgba(3,127,255,.2)',
+          // visibility: 'hidden',
+          // zIndex: -1,
+          // '-webkit-transition': 'all .4s ease-out',
+          // transition: 'all .4s ease-out',
+          // transform: 'scaleX(0)',
+          // transformOrigin: 'center',
+        },
+        '&:after': {
+          content: '""',
           position: 'absolute',
+          width: '100%',
+          height: '100%',
+          background: 'rgba(3,127,255,.2)',
+          '-webkit-transition': 'transform .4s ease-out',
+          transition: 'transform .4s ease-out',
           top: 0,
           left: 0,
-          right: '100%',
-          height: '100%',
-          width: 0,
-          background: 'rgba(3,127,255,.2)',
-          visibility: 'hidden',
           zIndex: -1,
-          transition: 'all .4s ease-out'
+          '-webkit-transform': 'scaleX(0)',
+          transform: 'scaleX(0)',
+          '-webkit-transform-origin': 'right',
+          transformOrigin: 'right',
         }
       }
     },
@@ -490,7 +519,7 @@ export const styles = (theme: Theme) => createStyles({
       marginTop: '-7px',
       borderWidth: '7px',
       borderStyle: 'solid',
-      blueBorder: `transparent ${blue} transparent transparent`
+      borderColor: `transparent ${blue} transparent transparent`
     }
   },
   copiedTooltipVisible: {
@@ -525,8 +554,8 @@ export const styles = (theme: Theme) => createStyles({
           height: '100%',
           background: blue,
           width: 0,
-          transition: 'all .4s ease-out',
-          '-webkit-transition': 'all .4s ease-out',
+          transition: 'all 1s cubic-bezier(.01,.57,.68,1.05) 0s',
+          '-webkit-transition': 'all 1s cubic-bezier(.01,.57,.68,1.05) 0s',
         }
       }
     }
@@ -608,10 +637,11 @@ export const styles = (theme: Theme) => createStyles({
   },
   aboutImage: {
     position: 'relative',
+    padding: '15px',
     '&:before, &:after': {
       content: `''`,
       position: 'absolute',
-      height: '65%',
+      height: '35%',
       width: '15px',
       background: 'rgba(3,127,255, .6)'
     },
@@ -635,6 +665,24 @@ export const styles = (theme: Theme) => createStyles({
         '-webkit-transform': 'scale(1)',
         transform: 'scale(1)'
       }
+    },
+    '& .blue-border-1': {
+      position: 'absolute',
+      top: 0,
+      left: '15px',
+      height: '15px',
+      width: 'calc(35% - 15px)',
+      background: 'rgba(3,127,255, .6)'
+    },
+    '& .blue-border-2': {
+      position: 'absolute',
+      top: 'auto',
+      left: 'auto',
+      bottom: 0,
+      right: '15px',
+      height: '15px',
+      width: 'calc(35% - 15px)',
+      background: 'rgba(3,127,255, .6)'
     },
     '& .about-image-zoom': {
       position: 'absolute',
@@ -756,7 +804,7 @@ export const styles = (theme: Theme) => createStyles({
         position: 'absolute',
         left: '30px',
         top: '100%',
-        blueBorder: '#191d2b transparent transparent #191d2b',
+        borderColor: '#191d2b transparent transparent #191d2b',
         borderStyle: 'solid',
         borderWidth: '12px',
       },
@@ -849,7 +897,7 @@ export const styles = (theme: Theme) => createStyles({
             transition: 'all .4s ease-out',
             '&:hover': {
               background: blue,
-              blueBorder: blue
+              borderColor: blue
             },
             '& svg': {
               height: '100%',
