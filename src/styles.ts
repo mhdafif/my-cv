@@ -815,6 +815,44 @@ export const styles = (theme: Theme) => createStyles({
           left: 'auto',
           right: 0
         }
+      },
+      '& p': {
+        position: 'relative',
+        '& svg': {
+          marginLeft: '5px',
+          verticalAlign: 'middle',
+          '-webkit-transition': 'all .4s ease-out 0s',
+          transition: 'all .4s ease-out 0s',
+          '&:hover, &.active': {
+            color: blue
+          },
+        },
+        '& span': {
+          padding: '10px',
+          position: 'absolute',
+          borderRight: `5px solid ${blue}`,
+          background: '#191d2b',
+          marginLeft: '25px',
+          marginTop: '10px',
+          width: '180px',
+          opacity: 0,
+          visibility: 'hidden',
+          '-webkit-transition': 'all .4s ease-out 0s',
+          transition: 'all .4s ease-out 0s',
+          '&:before': {
+            content: `''`,
+            position: 'absolute',
+            top: 0,
+            right: '100%',
+            borderWidth: '9px',
+            borderStyle: 'solid',
+            borderColor: `#191d2b #191d2b transparent transparent`,
+          },
+          '&.active': {
+            opacity: 1,
+            visibility: 'visible',
+          }
+        }
       }
     },
     '& a': {

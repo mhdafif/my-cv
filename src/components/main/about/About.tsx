@@ -7,6 +7,7 @@ import moment from "moment";
 import PaletteIcon from '@material-ui/icons/Palette';
 import CodeIcon from '@material-ui/icons/Code';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import { FaInfoCircle } from 'react-icons/fa';;
 
 interface Props {}
 
@@ -16,6 +17,7 @@ type AllProps
 
 const AboutComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
+  const [showInfo, setShowInfo] = React.useState<Boolean>(false);
 
   return (
     <React.Fragment>
@@ -54,7 +56,16 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <li><b>Age</b>{moment().diff('1994-08-09', 'years')} Years</li>
                     <li><b>Languages</b>Sundanese, Bahasa, English</li>
                     <li><b>Address</b>Super Puma Raya no 9, Cimahi Selatan</li>
-                    <li><b>Freelance</b>Available</li>
+                    <li><b>Freelance</b>
+                      <p>
+                        Available 
+                        <FaInfoCircle className={showInfo ? 'active' : ''} 
+                          onMouseEnter={() => setShowInfo(true)} 
+                          onMouseLeave={() => setShowInfo(false)} 
+                        />
+                        <span className={showInfo ? 'active' : ''}>You can contact me if there's a good opportunity. Thanks!</span>
+                      </p>
+                    </li>
                   </ul>
                   <a className={classes.button} href={process.env.PUBLIC_URL + '/Muhammad-Afif_CV.pdf'} rel="noopener noreferrer" target="_blank">
                     Download CV
