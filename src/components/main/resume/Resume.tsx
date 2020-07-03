@@ -1,15 +1,18 @@
 import React from 'react'
 import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
-import CaseIcon from '@material-ui/icons/BusinessCenter';
-import SchoolIcon from '@material-ui/icons/School';
+import { ReactComponent as TypescriptLogo } from 'icon/icon-typescript.svg';
+import { ReactComponent as JavascriptLogo } from 'icon/icon-javascript.svg';
+import { FaNodeJs, FaReact, FaHtml5, FaCss3, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 interface Props {}
 
-interface Skill {
+interface ISkill {
   name: string;
-  value: string;
+  logo: any;
+  detail: string[];
 }
+
 
 type AllProps 
   = WithStyles<typeof styles>
@@ -17,37 +20,47 @@ type AllProps
 
 const ResumeComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
-  const [skill1] = React.useState<Skill[]>([
-    { 
-      name: 'HTML',
-      value: '90%',
-    },
-    { 
-      name: 'Javascript',
-      value: '85%',
-    },
-    { 
-      name: 'React',
-      value: '80%',
-    },
-  ])
 
-  const [skill2] = React.useState<Skill[]>([
-    { 
+  const [skillSet1] = React.useState<ISkill[]>([
+    {
+      name: 'HTML',
+      logo: <FaHtml5 className="svg-icon html-icon" />,
+      detail: ['Elements', 'Text Formating', 'Table', 'Etc...']
+    },
+    {
       name: 'CSS',
-      value: '70%',
+      logo: <FaCss3 className="svg-icon css-icon" />,
+      detail: ['Position', 'Pseudo', 'Effect', 'Etc...']
     },
-    { 
+  ]);
+  const [skillSet2] = React.useState<ISkill[]>([
+    {
+      name: 'Javascript',
+      logo: <JavascriptLogo className="svg-icon js-icon" />,
+      detail: ['Arrow Function', 'Async Await', 'Array', 'Etc...']
+    },
+    {
       name: 'Typescript',
-      value: '85%',
+      logo: <TypescriptLogo className="svg-icon ts-icon" />,
+      detail: ['Type of data', 'Event Handler', 'Etc...']
     },
-    { 
+  ]);
+  const [skillSet3] = React.useState<ISkill[]>([
+    {
       name: 'Node',
-      value: '65%',
+      logo: <FaNodeJs className="svg-icon node-icon" />,
+      detail: ['RESTful API', 'Express', 'MongoDB', 'Etc...']
     },
-  ])
+    {
+      name: 'React',
+      logo: <FaReact className="svg-icon react-icon" />,
+      detail: ['Hooks', 'Lifecycle', 'Redux', 'Etc...']
+    },
+  ]);
+
   return (
     <React.Fragment>
+      {/* Skill Area */}
       <div className={classes.skillArea}>
         <Grid container className={classes.container2}>
           <Grid item xs={12} lg={8}>
@@ -58,20 +71,28 @@ const ResumeComp: React.FC<AllProps> = (props) => {
           </Grid>
           <Grid item xs={12} lg={8}>
             <Grid container spacing={3}>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={12} lg={4}>
                 <Grid container spacing={3}>
                   {
-                    skill1.map((item, index) => 
-                      <Grid item xs={12}>
-                        <div key={index} className={classes.skillItem}>
-                          <h6>
-                            {item.name}
-                          </h6>
-                          <div className="skill-progress">
-                              <div className="skill-percentage">{item.value}</div>
-                            <div className="skill-bar">
-                              <span className="skill-bar-active" style={{width: item.value}}></span>
+                    skillSet1.map((item, index) => 
+                      <Grid item xs={12} md={6} lg={12} key={index}>
+                        <div className={classes.skillCard}>
+                          <div className="skill-content">
+                            <div className="skill-icon">
+                              {item.logo}
                             </div>
+                            <h5>
+                              {item.name}
+                            </h5>
+                          </div>
+                          <div className="skill-detail">
+                            <ul>
+                              {
+                                item.detail.map((dtl, dtlIdx) =>
+                                  <li key={dtlIdx}>{dtl}</li>
+                                )
+                              }
+                            </ul>
                           </div>
                         </div>
                       </Grid>
@@ -79,20 +100,57 @@ const ResumeComp: React.FC<AllProps> = (props) => {
                   }
                 </Grid>
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={12} lg={4}>
                 <Grid container spacing={3}>
                   {
-                    skill2.map((item, index) => 
-                      <Grid item xs={12}>
-                        <div key={index} className={classes.skillItem}>
-                          <h6>
-                            {item.name}
-                          </h6>
-                          <div className="skill-progress">
-                              <div className="skill-percentage">{item.value}</div>
-                            <div className="skill-bar">
-                              <span className="skill-bar-active" style={{width: item.value}}></span>
+                    skillSet2.map((item, index) => 
+                      <Grid item xs={12} md={6} lg={12} key={index}>
+                        <div className={classes.skillCard}>
+                          <div className="skill-content">
+                            <div className="skill-icon">
+                              {item.logo}
                             </div>
+                            <h5>
+                              {item.name}
+                            </h5>
+                          </div>
+                          <div className="skill-detail">
+                            <ul>
+                              {
+                                item.detail.map((dtl, dtlIdx) =>
+                                  <li key={dtlIdx}>{dtl}</li>
+                                )
+                              }
+                            </ul>
+                          </div>
+                        </div>
+                      </Grid>
+                    )
+                  }
+                </Grid>
+              </Grid>
+              <Grid item xs={12} md={12} lg={4}>
+                <Grid container spacing={3}>
+                  {
+                    skillSet3.map((item, index) => 
+                      <Grid item xs={12} md={6} lg={12} key={index}>
+                        <div className={classes.skillCard}>
+                          <div className="skill-content">
+                            <div className="skill-icon">
+                              {item.logo}
+                            </div>
+                            <h5>
+                              {item.name}
+                            </h5>
+                          </div>
+                          <div className="skill-detail">
+                            <ul>
+                              {
+                                item.detail.map((dtl, dtlIdx) =>
+                                  <li key={dtlIdx}>{dtl}</li>
+                                )
+                              }
+                            </ul>
                           </div>
                         </div>
                       </Grid>
@@ -104,6 +162,8 @@ const ResumeComp: React.FC<AllProps> = (props) => {
           </Grid>
         </Grid>
       </div>
+
+      {/* Resume Area */}
       <div className={classes.resumeArea}>
         <Grid container className={classes.container2}>
           <Grid item xs={12} lg={8}>
@@ -115,7 +175,7 @@ const ResumeComp: React.FC<AllProps> = (props) => {
           <Grid item xs={12} lg={8}>
             <div className={classes.subTitle}>
               <span className='subTitle-icon'>
-                <CaseIcon />
+                <FaBriefcase />
               </span>
               <h4>Working Experience</h4>
             </div>
@@ -137,7 +197,7 @@ const ResumeComp: React.FC<AllProps> = (props) => {
           <Grid item xs={12} lg={8} style={{paddingTop: '50px'}}>
             <div className={classes.subTitle}>
               <span className='subTitle-icon'>
-                <SchoolIcon />
+                <FaGraduationCap />
               </span>
               <h4>Educational Qualifications</h4>
             </div>
@@ -151,7 +211,6 @@ const ResumeComp: React.FC<AllProps> = (props) => {
                 <div className="resume-detail">
                   <h5>Bachelor of Computer Science</h5>
                   <h6 className="resume-detail-company">Telkom University</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusamus, iusto at quo ut dolorum illo quas natus. Qui numquam mollitia placeat impedit consequuntur sapiente possimus non nobis pariatur animi!</p>
                 </div>
               </div>
               <div className="resume-item">
@@ -161,9 +220,8 @@ const ResumeComp: React.FC<AllProps> = (props) => {
                   </h6>
                 </div>
                 <div className="resume-detail">
-                  <h5>Higher Schoold Graduation</h5>
+                  <h5>Senior High School</h5>
                   <h6 className="resume-detail-company">SMA Angkasa Bandung</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusamus, iusto at quo ut dolorum illo quas natus. Qui numquam mollitia placeat impedit consequuntur sapiente possimus non nobis pariatur animi!</p>
                 </div>
               </div>
            </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
-// import imgNonik from 'image/nonik.png';
 import cocobo from 'image/cocobo.png';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import LinkIcon from '@material-ui/icons/Link';
@@ -21,8 +20,8 @@ const PortofolioComp: React.FC<AllProps> = (props) => {
       <Grid container className={classes.container2}>
         <Grid item xs={10} lg={8}>
           <div className={classes.title}>
-            <h2>Contact Me</h2>
-            <span>Contact Me</span>
+            <h2>Portofolio</h2>
+            <span>Portofolio</span>
           </div>
         </Grid>
         <Grid item xs={10} lg={8}>

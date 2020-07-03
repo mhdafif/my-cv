@@ -14,6 +14,7 @@ import { ThemeRoot, LayoutRoot } from 'components/layout';
 import { ThemeState } from 'context/theme/ThemeState';
 import { Blogs } from 'components/main/blogs/Blogs';
 import { BlogDetail } from 'components/main/blogs/BlogDetail';
+import { Development } from 'components/main/development/Development';
 
 interface Props {}
 
@@ -41,8 +42,8 @@ const AppComp: React.FC<AllProps> = (props) => {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/portofolio" component={Portofolio} />
-            <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/portofolio" component={process.env.REACT_APP_TYPE === 'develop' ? Portofolio : Development} />
+            <Route exact path="/blogs" component={process.env.REACT_APP_TYPE === 'develop' ? Blogs : Development} />
             <Route exact path="/blogs/detail" component={BlogDetail} />
           </div>
         </LayoutRoot>
