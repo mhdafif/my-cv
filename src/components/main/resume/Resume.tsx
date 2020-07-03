@@ -1,7 +1,6 @@
 import React from 'react'
 import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
-// import { ReactComponent as HtmlLogo } from 'icon/icon-html.svg';
 import { ReactComponent as TypescriptLogo } from 'icon/icon-typescript.svg';
 import { ReactComponent as JavascriptLogo } from 'icon/icon-javascript.svg';
 import { FaNodeJs, FaReact, FaHtml5, FaCss3, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
