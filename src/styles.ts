@@ -1,19 +1,15 @@
 import { Theme, createStyles } from "@material-ui/core";
 
-const blueBorder = '#2e344e';
+const borderGray = '#2e344e';
 const gray = '#a4acc4';
 const blue = '#037fff';
-
-// const navColorLight = '#FCFCE4';
-// const white = '#F4FCFC';
-// const orange = '#E65A0D';
-// const black = '#3C3C3C';
 
 export const styles = (theme: Theme) => createStyles({
   toolbar: theme.mixins.toolbar,
   layoutBody: {
     color: gray,
-    background: theme.palette.type === 'dark' ? '#10121b' : '#fff',
+    // background: theme.palette.type === 'dark' ? '#10121b' : '#fff',
+    background: '#10121b',
     transition: 'all .4s ease-out',
     '-webkit-transition': 'all .4s ease-out',
   },
@@ -71,8 +67,7 @@ export const styles = (theme: Theme) => createStyles({
     height: '100vh',
     width: '300px',
     background: '#191d2b',
-    // background: theme.palette.type === 'dark' ? '#191d2b' : '#fff',
-    borderRight: `1px solid ${blueBorder}`,
+    borderRight: `1px solid ${borderGray}`,
     zIndex: 10,
     '-webkit-transition': 'all .4s ease-out',
     transition: 'all .4s ease-out'
@@ -92,13 +87,13 @@ export const styles = (theme: Theme) => createStyles({
     display: 'block',
     width: '100%',
     textAlign: 'center',
-    borderBottom: `1px solid ${blueBorder}`,
+    borderBottom: `1px solid ${borderGray}`,
     position: 'relative',
     '& .nav-image-avatar': {
       height: '200px',
       width: '200px',
       borderRadius: '1000px',
-      border: `7px solid ${blueBorder}`,
+      border: `7px solid ${borderGray}`,
       overflow: 'hidden',
       margin: '0 auto',
       cursor: 'pointer'
@@ -176,7 +171,7 @@ export const styles = (theme: Theme) => createStyles({
           '&:after': {
             '-webkit-transform': 'scaleX(1)',
             transform: 'scaleX(1)',
-            '-webkit-transform-origin': 'left right',
+            '-webkit-transform-origin': 'left',
             transformOrigin: 'left',
           }
         },
@@ -191,6 +186,8 @@ export const styles = (theme: Theme) => createStyles({
             background: blue,
             '-webkit-transform': 'scaleX(1)',
             transform: 'scaleX(1)',
+            '-webkit-transform-origin': 'left',
+            transformOrigin: 'left',
           },
         },
         '&:before': {
@@ -237,7 +234,7 @@ export const styles = (theme: Theme) => createStyles({
     marginBotton: 0,
     fontSize: '1rem',
     paddingTop: '15px',
-    borderTop: `1px solid ${blueBorder}`,
+    borderTop: `1px solid ${borderGray}`,
     '& a': {
       color: gray,
       '-webkit-transition': 'all .4s ease-out',
@@ -389,7 +386,7 @@ export const styles = (theme: Theme) => createStyles({
       fontSize: '.94rem'
     },
     '& input, & textarea': {
-      border: `1px solid ${blueBorder}`,
+      border: `1px solid ${borderGray}`,
       fontSize: '1rem'
     }
   },
@@ -460,7 +457,7 @@ export const styles = (theme: Theme) => createStyles({
     width: '60px',
     flex: '0 0 60px',
     maxWidth: '60px',
-    border: `1px solid ${blueBorder}`,
+    border: `1px solid ${borderGray}`,
     textAlign: 'center',
     lineHeight: '76px',
     marginRight: '20px',
@@ -501,25 +498,33 @@ export const styles = (theme: Theme) => createStyles({
   copiedToolTip: {
     visibility: 'hidden',
     opacity: 0,
-    marginLeft: '5px',
+    marginLeft: '20px',
     background: blue,
     color: '#fff',
-    width: '75px',
-    borderRadius: '6px',
-    padding: '0px 10px',
+    width: '65px',
+    borderRadius: '0',
+    paddingLeft: '5px',
     position: 'absolute',
-    left: '110%',
+    // left: '110%',
     transition: 'all .4s ease-out',
     '-webkit-transition': 'all .4s ease-out',
+    '&:before': {
+      content: `''`,
+      position: 'absolute',
+      top: '0',
+      right: '100%',
+      borderWidth: '7px',
+      borderStyle: 'solid',
+      borderColor: `transparent ${blue} ${blue} transparent`
+    },
     '&:after': {
       content: `''`,
       position: 'absolute',
-      top: '50%',
+      bottom: '0',
       right: '100%',
-      marginTop: '-7px',
       borderWidth: '7px',
       borderStyle: 'solid',
-      borderColor: `transparent ${blue} transparent transparent`
+      borderColor: `${blue} ${blue} transparent transparent`
     }
   },
   copiedTooltipVisible: {
@@ -542,7 +547,7 @@ export const styles = (theme: Theme) => createStyles({
         flex: '0  60px'
       },
       '& .skill-bar': {
-        background: blueBorder,
+        background: borderGray,
         display: 'block',
         height: '6px',
         width: '100%',
@@ -558,6 +563,85 @@ export const styles = (theme: Theme) => createStyles({
           '-webkit-transition': 'all 1s cubic-bezier(.01,.57,.68,1.05) 0s',
         }
       }
+    }
+  },
+  skillCard: {
+    position: 'relative',
+    border: `1px solid ${borderGray}`,
+    padding: '30px',
+    background: '#191d2b',
+    borderTop: `5px solid ${borderGray}`,
+    transition: 'all .4s ease-out',
+    '-webkit-transition': 'all .4s ease-out',
+    display: 'flex',
+    textAlign: 'center',
+    '& .skill-content': {
+      transition: 'all .4s ease-out',
+      '-webkit-transition': 'all .4s ease-out',
+      width: '100%',
+      '& .skill-icon': {
+        '& .ts-icon': {
+          borderRadius: '17px'
+        },
+      }
+    },
+    '& .skill-detail': {
+      width: 'calc(50% - 50px)',
+      visibility: 'hidden',
+      textAlign: 'left',
+      position: 'absolute',
+      left: 'auto',
+      right: '30px',
+      opacity: 0,
+      transition: 'all .4s ease-out',
+      '-webkit-transition': 'all .4s ease-out',
+      '& ul': {
+        margin: 0,
+        lineHeight: '1.5rem',
+        listStyle: 'circle'
+      },
+    },
+    '&:hover': {
+      borderTopColor: blue,
+      '& .skill-content': {
+        width: '50%',
+        '& .skill-icon': {
+          '& .html-icon': {
+            color: '#e65027'
+          },
+          '& .css-icon': {
+            color: '#3596d0'
+          },
+          '& .js-icon': {
+            color: '#f0db4f'
+          },
+          '& .ts-icon': {
+            color: '#1074bb'
+          },
+          '& .node-icon': {
+            color: '#88c043'
+          },
+          '& .react-icon': {
+            color: '#00d8ff'
+          },
+        }
+      },
+      '& .skill-detail': {
+        visibility: 'visible',
+        opacity: 1,
+      },
+    },
+    '& .skill-icon': {
+      color: blue,
+      display: 'inline-block',
+      fontSize: '2.5rem',
+      '& svg': {
+        fontSize: '50px',
+      }
+    },
+    '& h5': {
+      position: 'relative',
+      fontWeight: '600'
     }
   },
   resumeArea: {
@@ -579,7 +663,7 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   resumeWrapper: {
-    borderLeft: `3px solid ${blueBorder}`,
+    borderLeft: `3px solid ${borderGray}`,
     '& .resume-item': {
       display: 'flex',
       marginTop: '30px',
@@ -598,7 +682,7 @@ export const styles = (theme: Theme) => createStyles({
           width: '15px',
           borderRadius: '100px',
           background: '#10121b',
-          border: `3px solid ${blueBorder}`
+          border: `3px solid ${borderGray}`
         },
         '& .resume-date-year': {
           color : gray,
@@ -615,7 +699,7 @@ export const styles = (theme: Theme) => createStyles({
           top: '15px',
           height: '1px',
           width: '30px',
-          background: blueBorder
+          background: borderGray
         },
         '& h5': {
           color: blue,
@@ -638,15 +722,15 @@ export const styles = (theme: Theme) => createStyles({
   aboutImage: {
     position: 'relative',
     padding: '15px',
+    '& img': {
+      width: '100%',
+    },
     '&:before, &:after': {
       content: `''`,
       position: 'absolute',
       height: '35%',
       width: '15px',
       background: 'rgba(3,127,255, .6)'
-    },
-    '& img': {
-      width: '100%',
     },
     '&:before': {
       left: 0,
@@ -708,10 +792,7 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   aboutContent: {
-    // display: 'flex',
-    // height: '100%',
-    // flexWrap: 'wrap',
-    // alignContent: 'space-between',
+    position: 'relative',
     '& h3': {
       fontWeight: 600,
       marginTop: '-8px'
@@ -737,17 +818,58 @@ export const styles = (theme: Theme) => createStyles({
       }
     },
     '& a': {
-      marginTop: '15px',
-
+      marginTop: '15px'
     }
+    // button seperti http://mrcthms.com/
+    // '& a': {
+    //   position: 'relative',
+    //   padding: '0 30px',
+    //   color: '#fff',
+    //   border: 0,
+    //   display: 'inline-block',
+    //   zIndex: 1,
+    //   textTransform: 'uppercase',
+    //   fontSize: '.9rem',
+    //   letterSpacing: '2px',
+    //   height: '50px',
+    //   lineHeight: '50px',
+    //   marginTop: '15px',
+    //   '-webkit-transition': 'all .4s ease-out 0s',
+    //   transition: 'all .4s ease-out 0s',
+    //   '&:hover': {
+    //     '&:before, &:after': {
+    //       background: blue,
+    //       transform: 'translateY(0)'
+    //     }
+    //   },
+    //   '&:before, &:after': {
+    //     bottom: '5%',
+    //     content: '""',
+    //     position: 'absolute',
+    //     top: '5%',
+    //     transition: 'all .4s ease-out',
+    //     width: '47%',
+    //     zIndex: -1
+    //   },
+    //   '&:before': {
+    //     background: 'rgba(3,127,255,.2)',
+    //     left: '5%',
+    //     transform: 'translateY(4px)'
+    //   },
+    //   '&:after': {
+    //     background: 'rgba(3,127,255,.2)',
+    //     left: '49%',
+    //     transform: 'translateY(-4px)'
+    //   },
+    // }
   },
   servicesArea: {
     position: 'relative',
     padding: '120px 0',
   },
   serviceItem: {
-    border: `1px solid ${blueBorder}`,
-    borderTop: `5px solid ${blueBorder}`,
+    border: `1px solid ${borderGray}`,
+    borderTop: `5px solid ${borderGray}`,
     padding: '30px',
     background: '#191d2b',
     '-webkit-transition': 'all .4s ease-out',
@@ -777,7 +899,7 @@ export const styles = (theme: Theme) => createStyles({
         bottom: 0,
         height: '2px',
         width: '50px',
-        background: blueBorder
+        background: borderGray
       }
     },
     '& p': {
@@ -786,7 +908,6 @@ export const styles = (theme: Theme) => createStyles({
   },
   reviewArea: {
     position: 'relative',
-    // paddingTop: '120px',
     paddingBottom: '120px',
   },
   reviewItem: {
@@ -797,7 +918,7 @@ export const styles = (theme: Theme) => createStyles({
       padding: '30px',
       marginBottom: '35px',
       position: 'relative',
-      borderLeft: `5px solid ${blueBorder}`,
+      borderLeft: `5px solid ${borderGray}`,
       background: '#191d2b',
       '&:after': {
         content: '""',
@@ -1003,5 +1124,23 @@ export const styles = (theme: Theme) => createStyles({
       marginTop: '25px',
       marginBottom: '25px'
     }
-  }
+  },
+  developmentArea: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    position: 'relative',
+    zIndex: 1,
+    '& .development-content': {
+      textAlign: 'center',
+      '& svg': {
+        color: blue,
+        fontSize: '150px'
+      },
+      '& h1': {
+        fontWeight: 700
+      },
+    }
+  },
 })
