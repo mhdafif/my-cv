@@ -32,10 +32,15 @@ const AboutComp: React.FC<AllProps> = (props) => {
             <Grid container spacing={3}>
               <Grid item xs={12} lg={6}>
                 <div className={classes.aboutImage}>
+                  <span className='blue-border-1' />
                   <img alt="about" src={myPict} />
-                  <span className='about-image-zoom'>
-                    <ZoomInIcon />
-                  </span>
+                  <span className='blue-border-2' />
+                  {
+                    process.env.REACT_APP_TYPE === 'develop' &&
+                    <span className='about-image-zoom'>
+                      <ZoomInIcon />
+                    </span>
+                  }
                 </div>
               </Grid>
               <Grid item xs={12} lg={6}>
@@ -78,7 +83,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <PaletteIcon />
                   </div>
                   <h5>Web Design</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
+                  <p>Provide a good design and easy to use.</p>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
@@ -87,7 +92,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <CodeIcon />
                   </div>
                   <h5>Web Development</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
+                  <p>Provide a clean code, easy to read and maintenable code for future.</p>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
@@ -95,8 +100,8 @@ const AboutComp: React.FC<AllProps> = (props) => {
                   <div className="service-icon">
                     <PhoneAndroidIcon />
                   </div>
-                  <h5>Mobile Application</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
+                  <h5>Responsive</h5>
+                  <p>Provide responsive style for desktop or mobile.</p>
                 </div>
               </Grid>
             </Grid>
@@ -105,44 +110,47 @@ const AboutComp: React.FC<AllProps> = (props) => {
       </div>
       
       {/* Review */}
-      <div className={classes.reviewArea}>
-        <Grid container className={classes.container2}>
-          <Grid item xs={8}>
-            <div className={classes.title}>
-              <h2>Review</h2>
-              <span>Review</span>
-            </div>
-          </Grid>
-          <Grid item xs={8}>
-            <Grid container spacing={3}>
-              <Grid item xs={6}>
-                <div className={classes.reviewItem}>
-                  <div className="review-item-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita impedit nobis tempore quaerat quibusdam, aliquid maxime tempora.</p>
+      {
+        process.env.REACT_APP_TYPE === 'develop' &&
+        <div className={classes.reviewArea}>
+          <Grid container className={classes.container2}>
+            <Grid item xs={8}>
+              <div className={classes.title}>
+                <h2>Review</h2>
+                <span>Review</span>
+              </div>
+            </Grid>
+            <Grid item xs={8}>
+              <Grid container spacing={3}>
+                <Grid item xs={6}>
+                  <div className={classes.reviewItem}>
+                    <div className="review-item-content">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita impedit nobis tempore quaerat quibusdam, aliquid maxime tempora.</p>
 
+                    </div>
+                    <div className="reivew-item-author">
+                      <h5>Burdette Turner</h5>
+                      <h6>Web Developer, Abc Company</h6>
+                    </div>
                   </div>
-                  <div className="reivew-item-author">
-                    <h5>Burdette Turner</h5>
-                    <h6>Web Developer, Abc Company</h6>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item xs={6}>
-                <div className={classes.reviewItem}>
-                  <div className="review-item-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita impedit nobis tempore quaerat quibusdam, aliquid maxime tempora.</p>
+                </Grid>
+                <Grid item xs={6}>
+                  <div className={classes.reviewItem}>
+                    <div className="review-item-content">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita impedit nobis tempore quaerat quibusdam, aliquid maxime tempora.</p>
 
+                    </div>
+                    <div className="reivew-item-author">
+                      <h5>Burdette Turner</h5>
+                      <h6>Web Developer, Abc Company</h6>
+                    </div>
                   </div>
-                  <div className="reivew-item-author">
-                    <h5>Burdette Turner</h5>
-                    <h6>Web Developer, Abc Company</h6>
-                  </div>
-                </div>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </div>
+        </div>
+      }
     </React.Fragment>
   )
 }
