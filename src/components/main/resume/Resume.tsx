@@ -1,10 +1,10 @@
 import React from 'react'
 import { WithStyles, withStyles, Grid } from '@material-ui/core';
 import { styles } from 'styles';
-import { ReactComponent as HtmlLogo } from 'icon/icon-html.svg';
+// import { ReactComponent as HtmlLogo } from 'icon/icon-html.svg';
 import { ReactComponent as TypescriptLogo } from 'icon/icon-typescript.svg';
 import { ReactComponent as JavascriptLogo } from 'icon/icon-javascript.svg';
-import { FaNodeJs, FaReact, FaCss3, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaNodeJs, FaReact, FaHtml5, FaCss3, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 
 interface Props {}
 
@@ -25,7 +25,7 @@ const ResumeComp: React.FC<AllProps> = (props) => {
   const [skillSet1] = React.useState<ISkill[]>([
     {
       name: 'HTML',
-      logo: <HtmlLogo className="svg-icon html-icon" />,
+      logo: <FaHtml5 className="svg-icon html-icon" />,
       detail: ['Elements', 'Text Formating', 'Table', 'Etc...']
     },
     {
