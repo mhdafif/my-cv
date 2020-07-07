@@ -71,22 +71,22 @@ const ContactComp: React.FC<AllProps> = (props) => {
                 <form>
                   <div className={classes.formField}>
                     <label>Enter your name*</label>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" disabled />
                   </div>
                   <div className={classes.formField}>
                     <label>Enter your email*</label>
-                    <input type="text" name="email" />
+                    <input type="text" name="email" disabled />
                   </div>
                   <div className={classes.formField}>
                     <label>Enter your subject*</label>
-                    <input type="text" name="subject" />
+                    <input type="text" name="subject" disabled />
                   </div>
                   <div className={classes.formField}>
                     <label>Enter your message*</label>
-                    <textarea name="message" cols={30} rows={6} ></textarea>
+                    <textarea name="message" cols={30} rows={6} disabled />
                   </div>
                   <div className={classes.formField}>
-                    <button className={classes.button}>Send Mail</button>
+                    <button className={classes.button} disabled>Send Mail <span className="feature-maintenance">This feature is under construction</span> </button>
                   </div>
                 </form>
               </div>

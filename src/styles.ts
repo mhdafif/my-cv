@@ -388,11 +388,48 @@ export const styles = (theme: Theme) => createStyles({
     '& input, & textarea': {
       border: `1px solid ${borderGray}`,
       fontSize: '1rem'
+    },
+    '& button': {
+      '& span.feature-maintenance': {
+        visibility: 'hidden',
+        opacity: 0,
+        marginLeft: '20px',
+        background: blue,
+        color: '#fff',
+        borderRadius: '0',
+        padding: '0 10px',
+        position: 'absolute',
+        whiteSpace: 'nowrap',
+        top: 0,
+        left: '110%',
+        transition: 'all .4s ease-out',
+        '-webkit-transition': 'all .4s ease-out',
+        '&:before': {
+          content: `''`,
+          position: 'absolute',
+          top: '0',
+          right: '100%',
+          borderWidth: '12.5px',
+          borderStyle: 'solid',
+          borderColor: `transparent ${blue} ${blue} transparent`
+        },
+        '&:after': {
+          content: `''`,
+          position: 'absolute',
+          bottom: '0',
+          right: '100%',
+          borderWidth: '12.5px',
+          borderStyle: 'solid',
+          borderColor: `${blue} ${blue} transparent transparent`
+        }
+      },
+      '&:hover': {
+        '& span.feature-maintenance': {
+          visibility: 'visible',
+          opacity: 1,
+        }
+      }
     }
-  },
-  'button, button:before': {
-    transition: 'all .4s ease-out',
-    '-webkit-transition': 'all .4s ease-out',
   },
   button: {
     position: 'relative',
