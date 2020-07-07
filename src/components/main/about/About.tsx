@@ -49,7 +49,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                 <div className={classes.aboutContent}>
                   <h3>I am <span className={classes.colorTheme}>Muhammad Afif</span></h3>
                   <p>
-                    I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.
+                  i'm a Front End Developer specialize in React. I can provide clean code and responsive for your demands. I also can make website more interactive with web animations. I currently interested in React and Typescript but i can adapt to new technology.
                   </p>
                   <ul>
                     <li><b>Full Name</b>Muhammad Afif</li>
@@ -94,7 +94,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <PaletteIcon />
                   </div>
                   <h5>Web Design</h5>
-                  <p>Provide a good design and easy to use.</p>
+                  <p>Provide good design and interactive easy-to-use UI/UX.</p>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
@@ -103,7 +103,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <CodeIcon />
                   </div>
                   <h5>Web Development</h5>
-                  <p>Provide a clean code, easy to read and maintenable code for future.</p>
+                  <p>Provide clean, easy-to-read, and maintainable code.</p>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} lg={4}>
@@ -112,7 +112,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                     <PhoneAndroidIcon />
                   </div>
                   <h5>Responsive</h5>
-                  <p>Provide responsive style for desktop or mobile.</p>
+                  <p>Provide responsive up-to-date style for your desktop or mobile.</p>
                 </div>
               </Grid>
             </Grid>

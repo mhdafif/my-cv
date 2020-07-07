@@ -79,7 +79,7 @@ const HomeComp: React.FC<AllProps> = (props) => {
           <div className={classes.homeContent}>
             <h1>Hi, I am <span className={classes.colorTheme}>Muhammad Afif</span></h1>
             <p>
-              I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.
+              I am a front-end developer. I can provide clean code and responsive for desktop and mobile. I also make website more interactive with web animations.
             </p>
             <ul className={classes.homeSocial}>
               <li>
