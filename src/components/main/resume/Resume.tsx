@@ -189,7 +189,13 @@ const ResumeComp: React.FC<AllProps> = (props) => {
                 <div className="resume-detail">
                   <h5>Frontend Web Developer</h5>
                   <h6 className="resume-detail-company">Xsis Mitra Utama</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusamus, iusto at quo ut dolorum illo quas natus. Qui numquam mollitia placeat impedit consequuntur sapiente possimus non nobis pariatur animi!</p>
+                  <ul>
+                    <li>Re build Employee Self Service Application from webform to micro service with React.</li>
+                    <li>Maintenance Employee Self Service Application.</li>
+                    <li>Fixing bug in existing Employee Self Service website.</li>
+                    <li>Create a new feature.</li>
+                  </ul>
+                  {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusamus, iusto at quo ut dolorum illo quas natus. Qui numquam mollitia placeat impedit consequuntur sapiente possimus non nobis pariatur animi!</p> */}
                 </div>
               </div>
            </div>

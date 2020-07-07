@@ -388,11 +388,48 @@ export const styles = (theme: Theme) => createStyles({
     '& input, & textarea': {
       border: `1px solid ${borderGray}`,
       fontSize: '1rem'
+    },
+    '& button': {
+      '& span.feature-maintenance': {
+        visibility: 'hidden',
+        opacity: 0,
+        marginLeft: '20px',
+        background: blue,
+        color: '#fff',
+        borderRadius: '0',
+        padding: '0 10px',
+        position: 'absolute',
+        whiteSpace: 'nowrap',
+        top: 0,
+        left: '110%',
+        transition: 'all .4s ease-out',
+        '-webkit-transition': 'all .4s ease-out',
+        '&:before': {
+          content: `''`,
+          position: 'absolute',
+          top: '0',
+          right: '100%',
+          borderWidth: '12.5px',
+          borderStyle: 'solid',
+          borderColor: `transparent ${blue} ${blue} transparent`
+        },
+        '&:after': {
+          content: `''`,
+          position: 'absolute',
+          bottom: '0',
+          right: '100%',
+          borderWidth: '12.5px',
+          borderStyle: 'solid',
+          borderColor: `${blue} ${blue} transparent transparent`
+        }
+      },
+      '&:hover': {
+        '& span.feature-maintenance': {
+          visibility: 'visible',
+          opacity: 1,
+        }
+      }
     }
-  },
-  'button, button:before': {
-    transition: 'all .4s ease-out',
-    '-webkit-transition': 'all .4s ease-out',
   },
   button: {
     position: 'relative',
@@ -579,6 +616,11 @@ export const styles = (theme: Theme) => createStyles({
       transition: 'all .4s ease-out',
       '-webkit-transition': 'all .4s ease-out',
       width: '100%',
+      '& h5': {
+        opacity: 1,
+        transition: 'all .4s ease-out',
+        '-webkit-transition': 'all .4s ease-out',
+      },
       '& .skill-icon': {
         '& .ts-icon': {
           borderRadius: '17px'
@@ -598,13 +640,32 @@ export const styles = (theme: Theme) => createStyles({
       '& ul': {
         margin: 0,
         lineHeight: '1.5rem',
-        listStyle: 'circle'
+        listStyle: 'none',
+        '& li': {
+          overflow: 'hidden',
+          whiteSpace: 'nowrap',
+          textOverflow: 'ellipsis',
+          '&:before': {
+            content: `''`,
+            position: 'absolute',
+            margin: '7px 7px 0 0',
+            right: '100%',
+            height: '10px',
+            width: '10px',
+            borderColor: `transparent transparent transparent ${blue}`,
+            borderStyle: 'solid',
+            borderWidth: '5px'
+          }
+        }
       },
     },
     '&:hover': {
       borderTopColor: blue,
       '& .skill-content': {
         width: '50%',
+        '& h5': {
+          // opacity: 0
+        },
         '& .skill-icon': {
           '& .html-icon': {
             color: '#e65027'
@@ -711,6 +772,25 @@ export const styles = (theme: Theme) => createStyles({
         },
         '& p': {
           marginBottom: 0
+        },
+        '& ul': {
+          marginBottom: 0,
+          marginLeft: '18px',
+          listStyle: 'none',
+          position: 'relative',
+          '& li': {
+            '&:before': {
+              content: `''`,
+              position: 'absolute',
+              margin: '7px 7px 0 0',
+              right: '100%',
+              height: '10px',
+              width: '10px',
+              borderColor: `transparent transparent transparent ${blue}`,
+              borderStyle: 'solid',
+              borderWidth: '5px'
+            }
+          }
         }
       },
     }
