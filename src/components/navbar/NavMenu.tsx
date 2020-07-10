@@ -43,12 +43,9 @@ const NavMenuComp: React.FC<AllProps> = (props) => {
       <li>
         <NavLink activeClassName={path === Path.Portofolio ? 'active' : ''} to="/portofolio">Portofolio</NavLink>
       </li>
-      {
-        process.env.REACT_APP_TYPE === 'develop' &&
-        <li>
-          <NavLink activeClassName={path === Path.Blogs || Path.BlogsDetail ? 'active' : ''} to="/blogs">Blogs</NavLink>
-        </li>
-      }
+      <li>
+        <NavLink activeClassName={path === Path.Blogs || Path.BlogsDetail ? 'active' : ''} to="/blogs">Blogs</NavLink>
+      </li>
       <li>
         <NavLink activeClassName={path === Path.Contact ? 'active' : ''} to="/contact">Contact</NavLink>
       </li>

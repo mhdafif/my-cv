@@ -1151,9 +1151,12 @@ export const styles = (theme: Theme) => createStyles({
     },
   },
   portofolioArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
-    minWidth: '100vh'
+    minHeight: '100vh'
   },
   portofolioItem: {
     '&:hover': {
@@ -1254,9 +1257,12 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   blogsArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
-    minWidth: '100vh'
+    minHeight: '100vh'
   },
   blogItem: {
     background: '#191d2b',
