@@ -5,7 +5,7 @@ import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
 
 interface Props {}
 
-enum Path {
+export enum Path {
   Home = '/',
   About = '/about',
   Resume = '/resume',

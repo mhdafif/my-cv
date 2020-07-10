@@ -7,6 +7,7 @@ import { NavFooter } from './NavFooter';
 import MenuIcon from '@material-ui/icons/MenuOpen';
 import classNames from 'classnames';
 import CloseIcon from '@material-ui/icons/Close';
+import { NavbarMobile } from './NavbarMobile';
 
 interface Props {}
 
@@ -19,16 +20,19 @@ const NavbarComp: React.FC<AllProps> = (props) => {
   const [showNav, setShowNav] = React.useState(false);
 
   return (
-    <nav className={classNames(classes.nav, showNav ? classes.navIsVisible : '')}>
-      <IconButton className='toggler' component="button" onClick={() => setShowNav(!showNav)}>
-        { showNav ? <CloseIcon /> : <MenuIcon /> }
-      </IconButton>
-      <div className={classes.navInner}>
-        <NavImage />
-        <NavMenu />
-        <NavFooter />
-      </div>
-    </nav>
+    <React.Fragment>      
+      <nav className={classNames(classes.nav, showNav ? classes.navIsVisible : '')}>
+        <IconButton className='toggler' component="button" onClick={() => setShowNav(!showNav)}>
+          { showNav ? <CloseIcon /> : <MenuIcon /> }
+        </IconButton>
+        <div className={classes.navInner}>
+          <NavImage />
+          <NavMenu />
+          <NavFooter />
+        </div>
+      </nav>
+      <NavbarMobile />
+    </React.Fragment>
   )
 }
 

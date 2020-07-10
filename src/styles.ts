@@ -73,18 +73,19 @@ export const styles = (theme: Theme) => createStyles({
     left: 0,
   },
   nav: {
-    // [theme.breakpoints.up('md')]: {
-    // },
     [theme.breakpoints.down('md')]: {
       transform: 'translateX(-100%)',
       width: '260px',
     },
+    [theme.breakpoints.down(768)]: {
+      display: 'none'
+    },
     transform: 'translateX(0)',
+    '-webkit-transform': 'translateX(0)',
     width: '300px',
     position: 'fixed',
     left: 0,
     top: 0,
-    '-webkit-transform': 'translateX(0)',
     height: '100vh',
     background: '#191d2b',
     borderRight: `1px solid ${borderGray}`,
@@ -92,7 +93,7 @@ export const styles = (theme: Theme) => createStyles({
     '-webkit-transition': 'all .4s ease-out',
     transition: 'all .4s ease-out',
     '& .toggler': {
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.between(768, "md")]: {
         display: 'flex',
       },
       position: 'absolute',
@@ -109,8 +110,24 @@ export const styles = (theme: Theme) => createStyles({
       border: '1px solid #2e344e',
       borderRadius: 0,
       display: 'none',
-      // [theme.breakpoints.up('md')]: {
-      // },
+    }
+  },
+  navMobile: {
+    [theme.breakpoints.up(768)]: {
+      display: 'none'
+    },
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '60px',
+    zIndex: 10,
+    position: 'fixed',
+    background: '#191d2b',
+    borderTop: `1px solid ${borderGray}`,
+    '& .active': {
+      color: blue
     }
   },
   navIsVisible: {
@@ -366,8 +383,12 @@ export const styles = (theme: Theme) => createStyles({
 
   },
   contactArea: {
+    [theme.breakpoints.down(768)]: {
+    paddingTop: '60px',
+    },
     position: 'relative',
-    padding: '120px 0',
+    paddingTop: '120px',
+    paddingBottom: '120px',
     minHeight: '100vh'
   },
   title: {
@@ -624,6 +645,9 @@ export const styles = (theme: Theme) => createStyles({
     opacity: 1
   },
   skillArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     paddingTop: '120px',
   },
@@ -761,6 +785,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   resumeArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
   },
@@ -851,6 +878,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   aboutArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+      },
     position: 'relative',
     paddingTop: '120px',
   },
@@ -1037,6 +1067,9 @@ export const styles = (theme: Theme) => createStyles({
     // }
   },
   servicesArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
   },
