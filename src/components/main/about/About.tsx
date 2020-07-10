@@ -24,13 +24,13 @@ const AboutComp: React.FC<AllProps> = (props) => {
       {/* About */}
       <div className={classes.aboutArea}>
         <Grid container className={classes.container2}>
-          <Grid item xs={8}>
+          <Grid item xs={10} lg={8}>
             <div className={classes.title}>
               <h2>About</h2>
               <span>About</span>
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={10} lg={8}>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={6}>
                 <div className={classes.aboutImage}>
@@ -67,7 +67,7 @@ const AboutComp: React.FC<AllProps> = (props) => {
                       </p>
                     </li>
                   </ul>
-                  <a className={classes.button} href={process.env.PUBLIC_URL + '/Muhammad-Afif_CV.pdf'} rel="noopener noreferrer" target="_blank">
+                  <a className={classes.button} href={process.env.PUBLIC_URL + '/Muhammad Afif - CV.pdf'} rel="noopener noreferrer" target="_blank">
                     Download CV
                   </a>
                 </div>
@@ -80,13 +80,13 @@ const AboutComp: React.FC<AllProps> = (props) => {
       {/* Services */}
       <div className={classes.servicesArea}>
         <Grid container className={classes.container2}>
-          <Grid item xs={8}>
+          <Grid item xs={10} lg={8}>
             <div className={classes.title}>
               <h2>Services</h2>
               <span>Services</span>
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={10} lg={8}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} lg={4}>
                 <div className={classes.serviceItem}>
@@ -125,13 +125,13 @@ const AboutComp: React.FC<AllProps> = (props) => {
         process.env.REACT_APP_TYPE === 'develop' &&
         <div className={classes.reviewArea}>
           <Grid container className={classes.container2}>
-            <Grid item xs={8}>
+            <Grid item xs={10} lg={8}>
               <div className={classes.title}>
                 <h2>Review</h2>
                 <span>Review</span>
               </div>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10} lg={8}>
               <Grid container spacing={3}>
                 <Grid item xs={6}>
                   <div className={classes.reviewItem}>

@@ -21,6 +21,9 @@ export const styles = (theme: Theme) => createStyles({
     '-webkit-transition': 'all .4s ease-out',
   },
   wrapper: {
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+    },
     paddingLeft: '300px',
     position: 'relative',
     minHeight: '100vh',
@@ -33,6 +36,10 @@ export const styles = (theme: Theme) => createStyles({
     position: 'absolute',
   },
   bgLines: {
+    [theme.breakpoints.down('md')]: {
+      left: 0,
+      width: '100%'
+    },
     left: '300px',
     width: 'calc(100% - 300px)',
     zIndex: -1,
@@ -66,18 +73,65 @@ export const styles = (theme: Theme) => createStyles({
     left: 0,
   },
   nav: {
+    [theme.breakpoints.down('md')]: {
+      transform: 'translateX(-100%)',
+      width: '260px',
+    },
+    [theme.breakpoints.down(768)]: {
+      display: 'none'
+    },
+    transform: 'translateX(0)',
+    '-webkit-transform': 'translateX(0)',
+    width: '300px',
     position: 'fixed',
     left: 0,
     top: 0,
-    '-webkit-transform': 'translateX(0)',
-    transform: 'translateX(0)',
     height: '100vh',
-    width: '300px',
     background: '#191d2b',
     borderRight: `1px solid ${borderGray}`,
     zIndex: 10,
     '-webkit-transition': 'all .4s ease-out',
-    transition: 'all .4s ease-out'
+    transition: 'all .4s ease-out',
+    '& .toggler': {
+      [theme.breakpoints.between(768, "md")]: {
+        display: 'flex',
+      },
+      position: 'absolute',
+      left: '100%',
+      top: '20px',
+      padding: 0,
+      height: '50px',
+      width: '50px',
+      textAlign: 'center',
+      fontSize: '1.6rem',
+      background: '#191d2b',
+      justifyContent: 'center',
+      alignItems: 'center',
+      border: '1px solid #2e344e',
+      borderRadius: 0,
+      display: 'none',
+    }
+  },
+  navMobile: {
+    [theme.breakpoints.up(768)]: {
+      display: 'none'
+    },
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '60px',
+    zIndex: 10,
+    position: 'fixed',
+    background: '#191d2b',
+    borderTop: `1px solid ${borderGray}`,
+    '& .active': {
+      color: blue
+    }
+  },
+  navIsVisible: {
+    transform: 'translateX(0)',
   },
   navInner: {
     width: '100%',
@@ -329,9 +383,13 @@ export const styles = (theme: Theme) => createStyles({
 
   },
   contactArea: {
+    [theme.breakpoints.down(768)]: {
+    paddingTop: '60px',
+    },
     position: 'relative',
-    padding: '120px 0',
-    height: '100vh'
+    paddingTop: '120px',
+    paddingBottom: '120px',
+    minHeight: '100vh'
   },
   title: {
     marginBottom: '60px',
@@ -490,8 +548,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   contactInfo: {
-    // marginTop: '-30px'
-    marginTop: '68px'
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '68px'
+    },
   },
   contactCard: {
     marginTop: '30px',
@@ -586,6 +645,9 @@ export const styles = (theme: Theme) => createStyles({
     opacity: 1
   },
   skillArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     paddingTop: '120px',
   },
@@ -723,6 +785,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   resumeArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
   },
@@ -813,6 +878,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   aboutArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+      },
     position: 'relative',
     paddingTop: '120px',
   },
@@ -999,6 +1067,9 @@ export const styles = (theme: Theme) => createStyles({
     // }
   },
   servicesArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
     padding: '120px 0',
   },
@@ -1080,9 +1151,12 @@ export const styles = (theme: Theme) => createStyles({
     },
   },
   portofolioArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
-    paddingTop: '120px',
-    paddingBottom: '120px',
+    padding: '120px 0',
+    minHeight: '100vh'
   },
   portofolioItem: {
     '&:hover': {
@@ -1183,9 +1257,12 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   blogsArea: {
+    [theme.breakpoints.down(768)]: {
+      paddingTop: '60px',
+    },
     position: 'relative',
-    paddingTop: '120px',
-    paddingBottom: '120px', 
+    padding: '120px 0',
+    minHeight: '100vh'
   },
   blogItem: {
     background: '#191d2b',
@@ -1249,6 +1326,7 @@ export const styles = (theme: Theme) => createStyles({
     position: 'relative',
     paddingTop: '120px',
     paddingBottom: '120px',
+    minHeight: '100vh',
     '& img': {
       marginBottom: '15px'
     },
