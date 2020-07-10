@@ -93,26 +93,28 @@ const ContactComp: React.FC<AllProps> = (props) => {
   const handleSendMail = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name, from, subject, message } = mail;
-    if (name && from && subject && message) {
-
-      const next = (res: any) => {
+    if (!loading) {
+      if (name && from && subject && message) {
+  
+        const next = (res: any) => {
+          setAlert({
+            type: AlertType.Success,
+            message: 'Your message has been sent!'
+          })
+          setMail(initialValues);
+        }
+        
+        postOnApi(API_ROUTES.SEND_MAIL, mail, false, next);
+      } else {
         setAlert({
-          type: AlertType.Success,
-          message: 'Your message has been sent!'
+          type: AlertType.Error,
+          message: 'Data is not complete!'
         })
-        setMail(initialValues);
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 3000)
       }
-      
-      postOnApi(API_ROUTES.SEND_MAIL, mail, false, next);
-    } else {
-      setAlert({
-        type: AlertType.Error,
-        message: 'Data is not complete!'
-      })
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 3000)
     }
   }
 

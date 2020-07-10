@@ -17,7 +17,6 @@ import { BlogDetail } from 'components/main/blogs/BlogDetail';
 import { Development } from 'components/main/development/Development';
 import { LoadingState } from 'context/loading/LoadingState';
 import { AlertState } from 'context/alert/AlertState';
-import axios from 'axios';
 import { ErrorState } from 'context/error/ErrorState';
 
 interface Props {}
@@ -28,10 +27,6 @@ type AllProps
 
 const AppComp: React.FC<AllProps> = (props) => {
   const { classes } = props;
-
-  React.useEffect(() => {
-    axios.get('https://mhdafif-api.herokuapp.com/api/v1/home');
-  }, []);
 
   return (
     <ThemeState>

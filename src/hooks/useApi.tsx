@@ -52,7 +52,7 @@ export const useApi = () => {
     const err: IError = {
       status: res.status,
       statusText: res.statusText,
-      message: res.data.error || `Error - ${res.statusText}`
+      message: res.data || res.data.error || `Error - ${res.statusText}`
     }
     setAlert({type: AlertType.Error, message: err.message});
     setError(err);
