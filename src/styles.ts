@@ -21,12 +21,10 @@ export const styles = (theme: Theme) => createStyles({
     '-webkit-transition': 'all .4s ease-out',
   },
   wrapper: {
-    [theme.breakpoints.up('md')]: {
-      paddingLeft: '300px',
-    },
     [theme.breakpoints.down('md')]: {
       paddingLeft: 0,
     },
+    paddingLeft: '300px',
     position: 'relative',
     minHeight: '100vh',
     zIndex: 1
@@ -38,14 +36,12 @@ export const styles = (theme: Theme) => createStyles({
     position: 'absolute',
   },
   bgLines: {
-    [theme.breakpoints.up('md')]: {
-      left: '300px',
-      width: 'calc(100% - 300px)',
-    },
     [theme.breakpoints.down('md')]: {
       left: 0,
       width: '100%'
     },
+    left: '300px',
+    width: 'calc(100% - 300px)',
     zIndex: -1,
     '& span': {
       display: 'inline-block',
@@ -77,14 +73,14 @@ export const styles = (theme: Theme) => createStyles({
     left: 0,
   },
   nav: {
-    [theme.breakpoints.up('md')]: {
-      transform: 'translateX(0)',
-      width: '300px',
-    },
+    // [theme.breakpoints.up('md')]: {
+    // },
     [theme.breakpoints.down('md')]: {
       transform: 'translateX(-100%)',
       width: '260px',
     },
+    transform: 'translateX(0)',
+    width: '300px',
     position: 'fixed',
     left: 0,
     top: 0,
@@ -96,6 +92,9 @@ export const styles = (theme: Theme) => createStyles({
     '-webkit-transition': 'all .4s ease-out',
     transition: 'all .4s ease-out',
     '& .toggler': {
+      [theme.breakpoints.down('md')]: {
+        display: 'flex',
+      },
       position: 'absolute',
       left: '100%',
       top: '20px',
@@ -109,12 +108,9 @@ export const styles = (theme: Theme) => createStyles({
       alignItems: 'center',
       border: '1px solid #2e344e',
       borderRadius: 0,
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-      [theme.breakpoints.down('md')]: {
-        display: 'flex',
-      },
+      display: 'none',
+      // [theme.breakpoints.up('md')]: {
+      // },
     }
   },
   navIsVisible: {
@@ -372,7 +368,7 @@ export const styles = (theme: Theme) => createStyles({
   contactArea: {
     position: 'relative',
     padding: '120px 0',
-    height: '100vh'
+    minHeight: '100vh'
   },
   title: {
     marginBottom: '60px',
@@ -531,8 +527,9 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   contactInfo: {
-    // marginTop: '-30px'
-    marginTop: '68px'
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '68px'
+    },
   },
   contactCard: {
     marginTop: '30px',
@@ -1122,8 +1119,8 @@ export const styles = (theme: Theme) => createStyles({
   },
   portofolioArea: {
     position: 'relative',
-    paddingTop: '120px',
-    paddingBottom: '120px',
+    padding: '120px 0',
+    minWidth: '100vh'
   },
   portofolioItem: {
     '&:hover': {
@@ -1225,8 +1222,8 @@ export const styles = (theme: Theme) => createStyles({
   },
   blogsArea: {
     position: 'relative',
-    paddingTop: '120px',
-    paddingBottom: '120px', 
+    padding: '120px 0',
+    minWidth: '100vh'
   },
   blogItem: {
     background: '#191d2b',
@@ -1290,6 +1287,7 @@ export const styles = (theme: Theme) => createStyles({
     position: 'relative',
     paddingTop: '120px',
     paddingBottom: '120px',
+    minHeight: '100vh',
     '& img': {
       marginBottom: '15px'
     },

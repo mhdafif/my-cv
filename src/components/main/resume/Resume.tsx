@@ -63,13 +63,13 @@ const ResumeComp: React.FC<AllProps> = (props) => {
       {/* Skill Area */}
       <div className={classes.skillArea}>
         <Grid container className={classes.container2}>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={10} lg={8}>
             <div className={classes.title}>
               <h2>My Skills</h2>
               <span>My Skills</span>
             </div>
           </Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={10} lg={8}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={12} lg={4}>
                 <Grid container spacing={3}>
@@ -166,13 +166,13 @@ const ResumeComp: React.FC<AllProps> = (props) => {
       {/* Resume Area */}
       <div className={classes.resumeArea}>
         <Grid container className={classes.container2}>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={10} lg={8}>
             <div className={classes.title}>
               <h2>Resume</h2>
               <span>Resume</span>
             </div>
           </Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={10} lg={8}>
             <div className={classes.subTitle}>
               <span className='subTitle-icon'>
                 <FaBriefcase />
@@ -200,7 +200,7 @@ const ResumeComp: React.FC<AllProps> = (props) => {
               </div>
            </div>
           </Grid>          
-          <Grid item xs={12} lg={8} style={{paddingTop: '50px'}}>
+          <Grid item xs={10} lg={8} style={{paddingTop: '50px'}}>
             <div className={classes.subTitle}>
               <span className='subTitle-icon'>
                 <FaGraduationCap />

@@ -127,7 +127,7 @@ const ContactComp: React.FC<AllProps> = (props) => {
             <span>Contact Me</span>
           </div>
         </Grid>
-        <Grid item xs={12} lg={8}>
+        <Grid item xs={10} lg={8}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={6}>
               <div>
