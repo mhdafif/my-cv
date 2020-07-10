@@ -3,9 +3,16 @@ import { Theme, createStyles } from "@material-ui/core";
 const borderGray = '#2e344e';
 const gray = '#a4acc4';
 const blue = '#037fff';
+const red = '#f44336';
 
 export const styles = (theme: Theme) => createStyles({
   toolbar: theme.mixins.toolbar,
+  fontColor: {
+    color: gray
+  },
+  errorColor: {
+    color: red
+  },
   layoutBody: {
     color: gray,
     // background: theme.palette.type === 'dark' ? '#10121b' : '#fff',
@@ -449,12 +456,15 @@ export const styles = (theme: Theme) => createStyles({
     // cursor: 'pointer',
     '&:hover': {
       color: '#fff',
-      '&:before': {
+      '&:after': {
         transform: 'scaleX(1)',
         '-webkit-transform': 'scaleX(1)',
       }
     },
-    '&:before': {
+    '&:active': {
+      background: '#003d7b',
+    },
+    '&:after': {
       transition: 'all .4s ease-out',
       '-webkit-transition': 'all .4s ease-out',
       content: `''`,
@@ -470,6 +480,13 @@ export const styles = (theme: Theme) => createStyles({
       transform: 'scaleX(0)',
       '-webkit-transform-origin': '0 0',
       transformOrigin: '0 0'
+    }
+  },
+  buttonActive: {
+    background: '#003d7b',
+    '&:after': {
+      transform: 'scaleX(1)',
+      '-webkit-transform': 'scaleX(1)',
     }
   },
   contactInfo: {
@@ -1260,5 +1277,21 @@ export const styles = (theme: Theme) => createStyles({
         fontWeight: 700
       },
     }
+  },
+  inputLabel: {
+    '-webkit-transition': 'all .4s ease-out',
+    transition: 'all .4s ease-out',
+  },
+  alertBox: {
+    '-webkit-transition': 'all .4s ease-out',
+    transition: 'all .4s ease-out',
+    marginLeft: '10px',
+    borderRadius: '2px', 
+    visibility: 'hidden',
+    opacity: 0
+  },
+  isVisible: {
+    visibility: 'visible',
+    opacity: 1
   },
 })
