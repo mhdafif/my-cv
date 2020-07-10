@@ -21,7 +21,12 @@ export const styles = (theme: Theme) => createStyles({
     '-webkit-transition': 'all .4s ease-out',
   },
   wrapper: {
-    paddingLeft: '300px',
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '300px',
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+    },
     position: 'relative',
     minHeight: '100vh',
     zIndex: 1
@@ -33,8 +38,14 @@ export const styles = (theme: Theme) => createStyles({
     position: 'absolute',
   },
   bgLines: {
-    left: '300px',
-    width: 'calc(100% - 300px)',
+    [theme.breakpoints.up('md')]: {
+      left: '300px',
+      width: 'calc(100% - 300px)',
+    },
+    [theme.breakpoints.down('md')]: {
+      left: 0,
+      width: '100%'
+    },
     zIndex: -1,
     '& span': {
       display: 'inline-block',
@@ -66,18 +77,48 @@ export const styles = (theme: Theme) => createStyles({
     left: 0,
   },
   nav: {
+    [theme.breakpoints.up('md')]: {
+      transform: 'translateX(0)',
+      width: '300px',
+    },
+    [theme.breakpoints.down('md')]: {
+      transform: 'translateX(-100%)',
+      width: '260px',
+    },
     position: 'fixed',
     left: 0,
     top: 0,
     '-webkit-transform': 'translateX(0)',
-    transform: 'translateX(0)',
     height: '100vh',
-    width: '300px',
     background: '#191d2b',
     borderRight: `1px solid ${borderGray}`,
     zIndex: 10,
     '-webkit-transition': 'all .4s ease-out',
-    transition: 'all .4s ease-out'
+    transition: 'all .4s ease-out',
+    '& .toggler': {
+      position: 'absolute',
+      left: '100%',
+      top: '20px',
+      padding: 0,
+      height: '50px',
+      width: '50px',
+      textAlign: 'center',
+      fontSize: '1.6rem',
+      background: '#191d2b',
+      justifyContent: 'center',
+      alignItems: 'center',
+      border: '1px solid #2e344e',
+      borderRadius: 0,
+      [theme.breakpoints.up('md')]: {
+        display: 'none',
+      },
+      [theme.breakpoints.down('md')]: {
+        display: 'flex',
+      },
+    }
+  },
+  navIsVisible: {
+    transform: 'translateX(0)',
   },
   navInner: {
     width: '100%',
