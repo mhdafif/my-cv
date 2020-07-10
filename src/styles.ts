@@ -384,11 +384,11 @@ export const styles = (theme: Theme) => createStyles({
   },
   contactArea: {
     [theme.breakpoints.down(768)]: {
-    paddingTop: '60px',
+      paddingTop: '60px',
+      paddingBottom: '120px',
     },
     position: 'relative',
     paddingTop: '120px',
-    paddingBottom: '120px',
     minHeight: '100vh'
   },
   title: {
