@@ -27,7 +27,8 @@ export const styles = (theme: Theme) => createStyles({
     paddingLeft: '300px',
     position: 'relative',
     minHeight: '100vh',
-    zIndex: 1
+    zIndex: 1,
+    overflowX: 'hidden',
   },
   bgLinesRaw: {
     height: '100%',
@@ -340,6 +341,12 @@ export const styles = (theme: Theme) => createStyles({
   },
   container2: {
     justifyContent: 'center',
+    '& .xxs': {
+      [theme.breakpoints.down(768)]: {
+        maxWidth: '100%',
+        flexBasis: '100%'
+      },
+    }
   },
   colorTheme: {
     color: blue
@@ -419,6 +426,9 @@ export const styles = (theme: Theme) => createStyles({
       }
     },
     '& span': {
+      [theme.breakpoints.down(768)]: {
+        fontSize: '4rem',
+      },
       position: 'absolute',
       left: 0,
       top: '100%',
@@ -574,6 +584,7 @@ export const styles = (theme: Theme) => createStyles({
     textAlign: 'center',
     lineHeight: '76px',
     marginRight: '20px',
+    cursor: 'pointer',
     '& svg': {
       transition: 'all .4s ease-out',
       '-webkit-transition': 'all .4s ease-out',
@@ -611,33 +622,34 @@ export const styles = (theme: Theme) => createStyles({
   copiedToolTip: {
     visibility: 'hidden',
     opacity: 0,
-    marginLeft: '20px',
+    marginLeft: '5px',
     background: blue,
     color: '#fff',
-    width: '65px',
-    borderRadius: '0',
-    paddingLeft: '5px',
+    width: '68px',
+    borderRadius: '2px',
     position: 'absolute',
+    textAlign: 'center',
+    // paddingLeft: '5px',
     // left: '110%',
     transition: 'all .4s ease-out',
     '-webkit-transition': 'all .4s ease-out',
     '&:before': {
-      content: `''`,
-      position: 'absolute',
-      top: '0',
-      right: '100%',
-      borderWidth: '7px',
-      borderStyle: 'solid',
-      borderColor: `transparent ${blue} ${blue} transparent`
+      // content: `''`,
+      // position: 'absolute',
+      // top: '0',
+      // right: '100%',
+      // borderWidth: '7px',
+      // borderStyle: 'solid',
+      // borderColor: `transparent ${blue} ${blue} transparent`
     },
     '&:after': {
-      content: `''`,
-      position: 'absolute',
-      bottom: '0',
-      right: '100%',
-      borderWidth: '7px',
-      borderStyle: 'solid',
-      borderColor: `${blue} ${blue} transparent transparent`
+      // content: `''`,
+      // position: 'absolute',
+      // bottom: '0',
+      // right: '100%',
+      // borderWidth: '7px',
+      // borderStyle: 'solid',
+      // borderColor: `${blue} ${blue} transparent transparent`
     }
   },
   copiedTooltipVisible: {
@@ -810,7 +822,14 @@ export const styles = (theme: Theme) => createStyles({
     '& .resume-item': {
       display: 'flex',
       marginTop: '30px',
+      flexWrap: 'wrap',
+      [theme.breakpoints.down(768)]: {
+        flexDirection: 'column',
+      },
       '& .resume-date': {
+        [theme.breakpoints.down(768)]: {
+          flex: '0 0 0',
+        },
         alignSelf: 'flex-start',
         flex: '0 0 180px',
         maxWidth: '180px',
@@ -835,7 +854,13 @@ export const styles = (theme: Theme) => createStyles({
       '& .resume-detail': {
         position: 'relative',
         paddingLeft: '50px',
+        [theme.breakpoints.down(768)]: {
+          paddingLeft: '30px',
+        },
         '&:before': {
+          [theme.breakpoints.down(768)]: {
+            width: '20px',
+          },
           content: `''`,
           position: 'absolute',
           left: 0,
@@ -997,21 +1022,24 @@ export const styles = (theme: Theme) => createStyles({
           position: 'absolute',
           borderRight: `5px solid ${blue}`,
           background: '#191d2b',
-          marginLeft: '25px',
-          marginTop: '10px',
+          marginLeft: '-10px',
+          marginTop: '30px',
           width: '180px',
           opacity: 0,
           visibility: 'hidden',
           '-webkit-transition': 'all .4s ease-out 0s',
           transition: 'all .4s ease-out 0s',
+          [theme.breakpoints.down(420)]: {
+            marginLeft: '-26px',
+          },
           '&:before': {
-            content: `''`,
-            position: 'absolute',
-            top: 0,
-            right: '100%',
-            borderWidth: '9px',
-            borderStyle: 'solid',
-            borderColor: `#191d2b #191d2b transparent transparent`,
+            // content: `''`,
+            // position: 'absolute',
+            // left: 0,
+            // bottom: '100%',
+            // borderWidth: '9px',
+            // borderStyle: 'solid',
+            // borderColor: `transparent transparent #191d2b #191d2b`,
           },
           '&.active': {
             opacity: 1,

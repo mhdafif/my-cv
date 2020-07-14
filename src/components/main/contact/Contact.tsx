@@ -175,16 +175,17 @@ const ContactComp: React.FC<AllProps> = (props) => {
                   contacts.map((contact, index) => 
                     <React.Fragment key={index}>
                       <div className={classes.contactCard}>
+                      <CopyToClipboard onCopy={() => handleTooltip(index)} text={contact.value}>
                         <span className={classes.contactIcon}>
                           {contact.icon}
                         </span>
+                      </CopyToClipboard>
                         <div className={classes.contactContent}>
-                          <h6>{contact.type}</h6>
+                          <h6>{contact.type} <span className={classNames(classes.copiedToolTip, contact.visible ? classes.copiedTooltipVisible : '')}>Copied</span></h6>
                           <p>
                             <CopyToClipboard onCopy={() => handleTooltip(index)} text={contact.value}>
                               <span className="copyText">{contact.value}</span>
                             </CopyToClipboard>
-                            <span className={classNames(classes.copiedToolTip, contact.visible ? classes.copiedTooltipVisible : '')}>Copied</span>
                           </p>
                         </div>
                       </div>
