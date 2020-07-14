@@ -75,7 +75,7 @@ const HomeComp: React.FC<AllProps> = (props) => {
         }}
       />
       <Grid container className={classes.container2}>
-        <Grid item xs={10} lg={8}>
+        <Grid item xs={10} lg={8} className="xxs">
           <div className={classes.homeContent}>
             <h1>Hi, I am <span className={classes.colorTheme}>Muhammad Afif</span></h1>
             <p>
